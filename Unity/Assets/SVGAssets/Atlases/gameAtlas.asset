@@ -1,0 +1,497 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d995787f488229646bc6ee47ced3138d, type: 3}
+  m_Name: gameAtlas
+  m_EditorClassIdentifier: 
+  m_GUID: 698ab5f4-3fda-461e-ae65-f396cee3d6d9
+  m_OutputFolder: Assets/SVGAssets/Atlases
+  m_OffsetScale: 0.65
+  m_Pow2Textures: 1
+  m_MaxTexturesDimension: 2048
+  m_SpritesBorder: 1
+  m_ClearColor: {r: 1, g: 1, b: 1, a: 0}
+  m_FastUpload: 1
+  m_SvgList:
+  - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+    Scale: 1
+    SeparateGroups: 1
+    Instantiable: 1
+    InstanceBaseIdx: 0
+  m_GeneratedTexturesFiles:
+  - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Textures/texture0.asset
+    Object: {fileID: 2800000, guid: d229411a51782b2449496e168c2a5fea, type: 2}
+  m_GeneratedSpritesFiles:
+    m_KeysList:
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65549
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65555
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65556
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65537
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65561
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65550
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65542
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65539
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65548
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65551
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65554
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65541
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65560
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65552
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65543
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65553
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65545
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65544
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65547
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65546
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65538
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65540
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65558
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65559
+    - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+      ElemIdx: 65557
+    m_ValuesList:
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Hen.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65549
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: f3a9dec306ea19f4fb10c7583ba872c4, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 12
+        OriginalX: 554
+        OriginalY: 110
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Sheep.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65555
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: b3be46758eed02940bdfea7ddb82cf77, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 18
+        OriginalX: 554
+        OriginalY: 0
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Cat.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65556
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 74c6475806f982043b444ebea7fd193a, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 19
+        OriginalX: 443
+        OriginalY: 0
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Panda.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65537
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: ae847aacc4015ca49b7ccea6b6e79f55, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 0
+        OriginalX: 554
+        OriginalY: 332
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_back.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65561
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 70c888853d67ee440a5ee1ad8583941f, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 24
+        OriginalX: 0
+        OriginalY: 443
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Rooster.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65550
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: bec8125b76c832445b95d1fb5884214e, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 13
+        OriginalX: 443
+        OriginalY: 110
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Leopard.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65542
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: a43ab830f88c6e843be94999df3e6093, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 5
+        OriginalX: 0
+        OriginalY: 332
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Orangutan.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65539
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 7250656aba846454faf69d1b599e56bf, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 2
+        OriginalX: 332
+        OriginalY: 332
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Zebra.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65548
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 20955b72d6d79ec438091fe7d588ebf0, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 11
+        OriginalX: 0
+        OriginalY: 221
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Pig.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65551
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: c422c8156f50bcc43a3f336b19128112, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 14
+        OriginalX: 332
+        OriginalY: 110
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Owl.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65554
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: af69ff006d1f30640b82be7b700594e0, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 17
+        OriginalX: 0
+        OriginalY: 110
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Puma.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65541
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 3b21515bd982fb444bccddbc9a27195f, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 4
+        OriginalX: 110
+        OriginalY: 332
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Fox.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65560
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: c9b7f9f595471d04f902a655fec2561f, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 23
+        OriginalX: 0
+        OriginalY: 0
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Dog.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65552
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 1a0149ca75e2dfb439797b77f3737828, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 15
+        OriginalX: 221
+        OriginalY: 110
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Lion.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65543
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 7c9b8b33f880a514a8fec87e60ac0999, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 6
+        OriginalX: 554
+        OriginalY: 221
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Rabbit.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65553
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: d8e3637a049d0e141b641cc426ff4079, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 16
+        OriginalX: 110
+        OriginalY: 110
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Tiger.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65545
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: de1813fe5fe476b4b8bbdb24a952a1e4, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 8
+        OriginalX: 332
+        OriginalY: 221
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Cougar.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65544
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 1d57babf93ba0054ca600b0731ba3338, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 7
+        OriginalX: 443
+        OriginalY: 221
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Penguin.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65547
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 7dc3686885352a343b523fd4ee89ae39, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 10
+        OriginalX: 110
+        OriginalY: 221
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Elephant.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65546
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: ec3715942788a0c42b80096de56f479c, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 9
+        OriginalX: 221
+        OriginalY: 221
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Monkey.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65538
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: da6dbf075c8b9154dae298b51bc301b2, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 1
+        OriginalX: 443
+        OriginalY: 332
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Panther.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65540
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 98d74b1a5b74a39468e4b49953ccadd7, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 3
+        OriginalX: 221
+        OriginalY: 332
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Donkey.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65558
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: a2de0241cab610348b0c719bb45e2c32, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 21
+        OriginalX: 221
+        OriginalY: 0
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Cow.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65559
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 9097e44324b24ad4db43a354d0cc20b8, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 22
+        OriginalX: 110
+        OriginalY: 0
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/gameAtlas/698ab5f4-3fda-461e-ae65-f396cee3d6d9/Sprites/animals_Deer.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65557
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: c7a2e95a6614d1a4ab00ef2d64c15655, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 20
+        OriginalX: 332
+        OriginalY: 0
+        GenerationScale: 0.21656084
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+  m_EditorGenerationScale: 0.21656084
+  m_SvgListHashOld: 565ECBA726F86BF34E61243ADE5EC1CB
+  m_SvgListHashCurrent: 565ECBA726F86BF34E61243ADE5EC1CB
+  m_GeneratedSpritesLists:
+    m_KeysList: 982d0000
+    m_ValuesList:
+    - Sprites:
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65549
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65555
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65556
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65537
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65561
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65550
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65542
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65539
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65548
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65551
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65554
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65541
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65560
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65552
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65543
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65553
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65545
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65544
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65547
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65546
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65538
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65540
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65558
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65559
+      - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}
+        ElemIdx: 65557
+  m_SpritesPreviewSize: 48
+  m_ReferenceWidth: 1536
+  m_ReferenceHeight: 2048
+  m_DeviceTestWidth: 512
+  m_DeviceTestHeight: 682
+  m_ScaleType: 7
+  m_Match: 0.5
