@@ -353,7 +353,7 @@ public class SVGAtlas : SVGBasicAtlas
 
             float currentWidth = (this.m_DeviceTestWidth <= 0) ? gameViewRes.x : (float)this.m_DeviceTestWidth;
             float currentHeight = (this.m_DeviceTestHeight <= 0) ? gameViewRes.y : (float)this.m_DeviceTestHeight;
-            newScale = SVGRuntimeGenerator.ScaleFactorCalc((float)this.m_ReferenceWidth, (float)this.m_ReferenceHeight, currentWidth, currentHeight, this.m_ScaleType, this.m_OffsetScale);
+            newScale = SVGRuntimeGenerator.ScaleFactorCalc((float)this.m_ReferenceWidth, (float)this.m_ReferenceHeight, currentWidth, currentHeight, this.m_ScaleType, this.m_Match, this.m_OffsetScale);
         }
         else
             newScale = this.m_EditorGenerationScale;
@@ -811,7 +811,7 @@ public class SVGAtlas : SVGBasicAtlas
     // Calculate the scale factor that would be used to generate sprites if the screen would have the specified dimensions
     public float ScaleFactorCalc(int currentScreenWidth, int currentScreenHeight)
     {
-        return SVGRuntimeGenerator.ScaleFactorCalc((float)this.m_ReferenceWidth, (float)this.m_ReferenceHeight, currentScreenWidth, currentScreenHeight, this.m_ScaleType, this.m_OffsetScale);
+        return SVGRuntimeGenerator.ScaleFactorCalc((float)this.m_ReferenceWidth, (float)this.m_ReferenceHeight, currentScreenWidth, currentScreenHeight, this.m_ScaleType, this.m_Match, this.m_OffsetScale);
     }
 
     // Generate a sprite set, according to specified screen dimensions; return true if case of success, else false
@@ -824,7 +824,7 @@ public class SVGAtlas : SVGBasicAtlas
     // return true if case of success, else false
     public bool UpdateRuntimeSprites(int currentScreenWidth, int currentScreenHeight, out float scale)
     {
-        float newScale = SVGRuntimeGenerator.ScaleFactorCalc((float)this.m_ReferenceWidth, (float)this.m_ReferenceHeight, currentScreenWidth, currentScreenHeight, this.m_ScaleType, this.m_OffsetScale);
+        float newScale = SVGRuntimeGenerator.ScaleFactorCalc((float)this.m_ReferenceWidth, (float)this.m_ReferenceHeight, currentScreenWidth, currentScreenHeight, this.m_ScaleType, this.m_Match, this.m_OffsetScale);
 
         if (Math.Abs(this.m_RuntimeGenerationScale - newScale) > Single.Epsilon)
         {

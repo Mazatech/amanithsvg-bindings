@@ -395,10 +395,12 @@ public enum SVGScaleType {
     MinDimension        = 3,
     // Scale each packed SVG according to the maximum dimension between width and height.
     MaxDimension        = 4,
-
+    // Expand the canvas area either horizontally or vertically, so the size of the canvas will never be smaller than the reference.
     Expand              = 5,
-    Shrink              = 6,
-    MatchWidthOrHeight  = 7
+    // Crop the canvas area either horizontally or vertically, so the size of the canvas will never be larger than the reference.
+    Shrink = 6,
+    // Scale each packed SVG with the width as reference, the height as reference, or something in between.
+    MatchWidthOrHeight = 7
 };
 
 public class SVGRuntimeGenerator
@@ -410,7 +412,7 @@ public class SVGRuntimeGenerator
 
     public static float ScaleFactorCalc(float referenceScreenWidth, float referenceScreenHeight,
                                         float currentWidth, float currentHeight,
-                                        SVGScaleType scaleType, float offsetScale)
+                                        SVGScaleType scaleType, float match, float offsetScale)
     {
         float scale;
         bool referenceLandscape, currentLandscape;
@@ -462,7 +464,7 @@ public class SVGRuntimeGenerator
                 */
                 float logWidth = Mathf.Log (currentWidth / referenceScreenWidth, 2);
                 float logHeight = Mathf.Log (currentHeight / referenceScreenHeight, 2);
-                float logWeightedAverage = Mathf.Lerp(logWidth, logHeight, 0.5f);
+                float logWeightedAverage = Mathf.Lerp(logWidth, logHeight, match);
                 scale = Mathf.Pow(2, logWeightedAverage);
                 break;
             }
