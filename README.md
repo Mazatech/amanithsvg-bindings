@@ -12,6 +12,8 @@ Game engines:
 
  - Unity
 
+ - libGDX
+
 ## Credits
 
 Credits for SVG arts included in this repository and within AmanithSVG package:
