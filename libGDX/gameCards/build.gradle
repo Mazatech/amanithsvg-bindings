@@ -23,6 +23,7 @@ allprojects {
     ext {
         appName = "GameCards"
         gdxVersion = '1.9.8'
+        amanithsvgVersion = '1.9.9'
         roboVMVersion = '2.3.3'
         box2DLightsVersion = '1.4'
         ashleyVersion = '1.7.0'
@@ -47,7 +48,7 @@ project(":desktop") {
         implementation "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         // AmanithSVG natives for Desktop (Win/Mac/Linux, x86/x86_64)
-        implementation "com.mazatech.amanithsvg:amanithsvg-gdx:$gdxVersion:natives-desktop"
+        implementation "com.mazatech.amanithsvg:amanithsvg-gdx:$amanithsvgVersion:natives-desktop"
     }
 }
 
@@ -66,11 +67,11 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
         // AmanithSVG natives for Android
-        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$gdxVersion:natives-armeabi"
-        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$gdxVersion:natives-armeabi-v7a"
-        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$gdxVersion:natives-arm64-v8a"
-        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$gdxVersion:natives-x86"
-        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$gdxVersion:natives-x86_64"
+        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$amanithsvgVersion:natives-armeabi"
+        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$amanithsvgVersion:natives-armeabi-v7a"
+        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$amanithsvgVersion:natives-arm64-v8a"
+        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$amanithsvgVersion:natives-x86"
+        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$amanithsvgVersion:natives-x86_64"
     }
 }
 
@@ -86,7 +87,7 @@ project(":ios") {
         implementation "com.badlogicgames.gdx:gdx-backend-robovm:$gdxVersion"
         implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
         // AmanithSVG natives for iOS
-        implementation "com.mazatech.amanithsvg:amanithsvg-gdx:$gdxVersion:natives-ios"
+        implementation "com.mazatech.amanithsvg:amanithsvg-gdx:$amanithsvgVersion:natives-ios"
     }
 }
 
@@ -110,7 +111,7 @@ project(":ios-moe") {
         implementation "com.badlogicgames.gdx:gdx-backend-moe:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
         // AmanithSVG natives for iOS
-        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$gdxVersion:natives-ios"
+        natives "com.mazatech.amanithsvg:amanithsvg-gdx:$amanithsvgVersion:natives-ios"
     }
 }
 
