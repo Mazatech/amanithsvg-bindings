@@ -384,25 +384,6 @@ public class SVGRuntimeSprite
     private SVGSpriteRef m_SpriteReference;
 }
 
-public enum SVGScaleType {
-    // Do not scale packed SVG.
-    None                = 0,
-    // Scale each packed SVG according to width.
-    Horizontal          = 1,
-    // Scale each packed SVG according to height.
-    Vertical            = 2,
-    // Scale each packed SVG according to the minimum dimension between width and height.
-    MinDimension        = 3,
-    // Scale each packed SVG according to the maximum dimension between width and height.
-    MaxDimension        = 4,
-    // Expand the canvas area either horizontally or vertically, so the size of the canvas will never be smaller than the reference.
-    Expand              = 5,
-    // Crop the canvas area either horizontally or vertically, so the size of the canvas will never be larger than the reference.
-    Shrink = 6,
-    // Scale each packed SVG with the width as reference, the height as reference, or something in between.
-    MatchWidthOrHeight = 7
-};
-
 public class SVGRuntimeGenerator
 {
     // Constructor.
@@ -412,72 +393,10 @@ public class SVGRuntimeGenerator
 
     public static float ScaleFactorCalc(float referenceScreenWidth, float referenceScreenHeight,
                                         float currentWidth, float currentHeight,
-                                        SVGScaleType scaleType, float match, float offsetScale)
+                                        SVGScalerMatchMode matchMode, float match, float offsetScale)
     {
-        float scale;
-        bool referenceLandscape, currentLandscape;
-
-        switch (scaleType)
-        {
-            case SVGScaleType.Horizontal:
-                scale = currentWidth / referenceScreenWidth;
-                break;
-
-            case SVGScaleType.Vertical:
-                scale = currentHeight / referenceScreenHeight;
-                break;
-
-            case SVGScaleType.MinDimension:
-                referenceLandscape = (referenceScreenWidth > referenceScreenHeight) ? true : false;
-                currentLandscape = (currentWidth > currentHeight) ? true : false;
-                if (referenceLandscape != currentLandscape)
-                    scale = (currentWidth <= currentHeight) ? (currentWidth / referenceScreenHeight) : (currentHeight / referenceScreenWidth);
-                else
-                    scale = (currentWidth <= currentHeight) ? (currentWidth / referenceScreenWidth) : (currentHeight / referenceScreenHeight);
-                break;
-
-            case SVGScaleType.MaxDimension:
-                referenceLandscape = (referenceScreenWidth > referenceScreenHeight) ? true : false;
-                currentLandscape = (currentWidth > currentHeight) ? true : false;
-                if (referenceLandscape != currentLandscape)
-                    scale = (currentWidth >= currentHeight) ? (currentWidth / referenceScreenHeight) : (currentHeight / referenceScreenWidth);
-                else
-                    scale = (currentWidth >= currentHeight) ? (currentWidth / referenceScreenWidth) : (currentHeight / referenceScreenHeight);
-                break;
-
-            case SVGScaleType.Expand:
-                scale = Mathf.Max(currentWidth / referenceScreenWidth, currentHeight / referenceScreenHeight);
-                break;
-
-            case SVGScaleType.Shrink:
-                scale = Mathf.Min(currentWidth / referenceScreenWidth, currentHeight / referenceScreenHeight);
-                break;
-
-            case SVGScaleType.MatchWidthOrHeight:
-            {
-                /*
-                    We take the log of the relative width and height before taking the average. Then we transform it back in the original space.
-                    The reason to transform in and out of logarithmic space is to have better behavior.
-                    If one axis has twice resolution and the other has half, it should even out if widthOrHeight value is at 0.5.
-                    In normal space the average would be (0.5 + 2) / 2 = 1.25
-                    In logarithmic space the average is (-1 + 1) / 2 = 0
-                */
-                float logWidth = Mathf.Log (currentWidth / referenceScreenWidth, 2);
-                float logHeight = Mathf.Log (currentHeight / referenceScreenHeight, 2);
-                float logWeightedAverage = Mathf.Lerp(logWidth, logHeight, match);
-                scale = Mathf.Pow(2, logWeightedAverage);
-                break;
-            }
-            
-            default:
-                scale = 1;
-                break;
-        }
-        
-        // DEBUG STUFF
-        //Debug.Log ("ScaleFactorCalc, current screen: " + currentWidth + " x " + currentHeight + "  scale factor: " + scale * offsetScale);
-
-        return (scale * offsetScale);
+        SVGScaler scaler = new SVGScaler(referenceScreenWidth, referenceScreenHeight, matchMode, match, offsetScale);
+        return scaler.ScaleFactorCalc(currentWidth, currentHeight);
     }
 
     private static SVGPackedBin[] GenerateBins(// input

@@ -36,47 +36,40 @@
 
 package com.mazatech.svgt;
 
-public enum SVGTMeetOrSlice {
+public enum SVGScalerMatchMode {
 
-    /*
-        Scale the graphic such that:
-        - aspect ratio is preserved
-        - the entire viewBox is visible within the viewport
-        - the viewBox is scaled up as much as possible, while still meeting the other criteria
+    // Do not scale packed SVG.
+    None(0),
+    // Scale each packed SVG according to width.
+    Horizontal(1),
+    // Scale each packed SVG according to height.
+    Vertical(2),
+    // Scale each packed SVG according to the minimum dimension between width and height.
+    MinDimension(3),
+    // Scale each packed SVG according to the maximum dimension between width and height.
+    MaxDimension(4),
+    // Expand the canvas area either horizontally or vertically, so the size of the canvas will never be smaller than the reference.
+    Expand(5),
+    // Crop the canvas area either horizontally or vertically, so the size of the canvas will never be larger than the reference.
+    Shrink(6),
+    // Scale each packed SVG with the width as reference, the height as reference, or something in between.
+    MatchWidthOrHeight(7);
 
-        In this case, if the aspect ratio of the graphic does not match the viewport, some of the viewport will
-        extend beyond the bounds of the viewBox (i.e., the area into which the viewBox will draw will be smaller
-        than the viewport).
-    */
-    Meet(AmanithSVG.SVGT_ASPECT_RATIO_MEET),
-
-    /*
-        Scale the graphic such that:
-        - aspect ratio is preserved
-        - the entire viewport is covered by the viewBox
-        - the viewBox is scaled down as much as possible, while still meeting the other criteria
+    SVGScalerMatchMode(int internalEnum) {
         
-        In this case, if the aspect ratio of the viewBox does not match the viewport, some of the viewBox will
-        extend beyond the bounds of the viewport (i.e., the area into which the viewBox will draw is larger
-        than the viewport).
-    */
-    Slice(AmanithSVG.SVGT_ASPECT_RATIO_SLICE);
-
-    SVGTMeetOrSlice(int svgtEnum) {
-        
-        _svgtEnum = svgtEnum;
+        _internalEnum = internalEnum;
     }
 
     public int getValue() {
 
-        return _svgtEnum;
+        return _internalEnum;
     }
 
-    public static SVGTMeetOrSlice fromValue(int svgtEnum) {
+    public static SVGScalerMatchMode fromValue(int internalEnum) {
 
-        return _allValues[svgtEnum];
+        return _allValues[internalEnum];
     }
 
-    private final int _svgtEnum;
-    private static SVGTMeetOrSlice[] _allValues = values();
+    private final int _internalEnum;
+    private static SVGScalerMatchMode[] _allValues = values();
 }

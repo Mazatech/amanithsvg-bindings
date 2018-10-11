@@ -183,8 +183,8 @@ public class SVGAtlasEditor : SVGBasicAtlasEditor
         int refHeight = EditorGUILayout.IntField(new GUIContent("Reference height", "The resolution the SVG files content is designed for. If the screen resolution is larger, SVG contents will be scaled up, and if it’s smaller, it will be scaled down."), atlas.ReferenceHeight);
         int deviceTestWidth = EditorGUILayout.IntField("Device test width", atlas.DeviceTestWidth);
         int deviceTestHeight = EditorGUILayout.IntField("Device test height", atlas.DeviceTestHeight);
-        SVGScaleType scaleType = (SVGScaleType)EditorGUILayout.EnumPopup(new GUIContent("Screen match mode", "A mode used to scale (i.e. generate) SVG sprites if the aspect ratio of the current resolution doesn’t fit the reference resolution."), atlas.ScaleType);
-        if (scaleType == SVGScaleType.MatchWidthOrHeight)
+        SVGScalerMatchMode scaleType = (SVGScalerMatchMode)EditorGUILayout.EnumPopup(new GUIContent("Screen match mode", "A mode used to scale (i.e. generate) SVG sprites if the aspect ratio of the current resolution doesn’t fit the reference resolution."), atlas.ScaleType);
+        if (scaleType == SVGScalerMatchMode.MatchWidthOrHeight)
         {
             Rect r = EditorGUILayout.GetControlRect(true, EditorGUIUtility.singleLineHeight + 12);
             match = this.MatchSlider(r, atlas.Match);

@@ -915,7 +915,7 @@ public class SVGAtlas : SVGBasicAtlas
     }
 #endif
 
-    public SVGScaleType ScaleType
+    public SVGScalerMatchMode ScaleType
     {
         get
         {
@@ -957,7 +957,7 @@ public class SVGAtlas : SVGBasicAtlas
     private int m_DeviceTestHeight = 0;
 #endif
     [SerializeField]
-    private SVGScaleType m_ScaleType = SVGScaleType.MatchWidthOrHeight;
+    private SVGScalerMatchMode m_ScaleType = SVGScalerMatchMode.MatchWidthOrHeight;
     [SerializeField]
     private float m_Match = 0.5f;
 

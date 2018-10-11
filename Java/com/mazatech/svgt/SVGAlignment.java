@@ -36,34 +36,49 @@
 
 package com.mazatech.svgt;
 
-class SVGAlignment {
+public class SVGAlignment {
 
-    private final SVGTAlign _align;
-    private final SVGTMeetOrSlice _meetOrSlice;
+    private SVGTAlign _align;
+    private SVGTMeetOrSlice _meetOrSlice;
 
-    SVGAlignment(SVGTAlign align, SVGTMeetOrSlice meetOrSlice) {
+    // Constructor.
+    public SVGAlignment(SVGTAlign align, SVGTMeetOrSlice meetOrSlice) {
+
         _align = align;
         _meetOrSlice = meetOrSlice;
     }
 
+    public SVGAlignment(final SVGAlignment src) {
+
+        _align = src._align;
+        _meetOrSlice = src._meetOrSlice;
+    }
+
     SVGTAlign getAlign() {
+
         return _align;
     }
 
     SVGTMeetOrSlice getMeetOrSlice() {
+
         return _meetOrSlice;
+    }
+
+    public void set(final SVGAlignment src) {
+
+        _align = src._align;
+        _meetOrSlice = src._meetOrSlice;
     }
 
     @Override
     public int hashCode() {
+
         return _align.hashCode() ^ _meetOrSlice.hashCode();
     }
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof SVGAlignment)) {
-            return false;
-        }
-        return (_align.equals(((SVGAlignment)o).getAlign()) && _meetOrSlice.equals(((SVGAlignment)o).getMeetOrSlice()));
+
+        return (!(o instanceof SVGAlignment)) ? false : (_align.equals(((SVGAlignment)o).getAlign()) && _meetOrSlice.equals(((SVGAlignment)o).getMeetOrSlice()));
     }
 }

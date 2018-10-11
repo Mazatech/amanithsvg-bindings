@@ -1026,6 +1026,33 @@ public static class AmanithSVG {
                                              uint renderingQuality);
 #endif
 
+    /*!
+        Draw a set of packed SVG documents/elements over the specified drawing surface.
+
+        The drawing surface is cleared (or not) according to the current settings (see svgtClearColor and svgtClearPerform).
+        The specified rectangles MUST NOT point to the memory returned by svgtPackingBinRects.
+
+        This function returns:
+        - SVGT_ILLEGAL_ARGUMENT_ERROR if 'rects' pointer is NULL or if it's not properly aligned
+        - SVGT_BAD_HANDLE_ERROR if specified surface handle is not valid
+        - SVGT_NO_ERROR if the operation was completed successfully
+    */
+#if (UNITY_WP8 || UNITY_WP_8_1) && !UNITY_EDITOR
+    public static int svgtPackingRectsDraw(System.IntPtr rects,
+                                           uint rectsCount,
+                                           uint surface,
+                                           uint renderingQuality)
+    {
+        return SVGAssetsBridge.API.svgtPackingRectsDraw(rects, rectsCount, surface, renderingQuality);
+    }
+#else
+    [DllImport(libName)]
+    public static extern int svgtPackingRectsDraw(System.IntPtr rects,
+                                                  uint rectsCount,
+                                                  uint surface,
+                                                  uint renderingQuality);
+#endif
+
     /*
         Get renderer and version information.
     */
@@ -1075,11 +1102,11 @@ public static class AmanithSVG {
     public static void svgtErrorLog(string msgPrefix,
                                     int errorCode)
     {
-    #if UNITY_ENGINE
+#if UNITY_ENGINE
         UnityEngine.Debug.Log(msgPrefix + svgtErrorDesc(errorCode));
-    #else
+#else
         Console.WriteLine(msgPrefix + svgtErrorDesc(errorCode));
-    #endif
+#endif
     }
 }
 
@@ -1095,6 +1122,11 @@ public class SVGColor
         _g = 1.0f;
         _b = 1.0f;
         _a = 0.0f;
+    }
+
+    // Set constructor.
+    public SVGColor(float r, float g, float b) : this(r, g, b, 1.0f)
+    {
     }
 
     // Set constructor.
@@ -1151,6 +1183,152 @@ public class SVGColor
     private float _b;
     // Alpha component.
     private float _a;
+
+    public static readonly SVGColor Aliceblue = new SVGColor(0.941f, 0.973f, 1.000f);
+    public static readonly SVGColor Antiquewhite = new SVGColor(0.980f, 0.922f, 0.843f);
+    public static readonly SVGColor Aqua = new SVGColor(0.000f, 1.000f, 1.000f);
+    public static readonly SVGColor Aquamarine = new SVGColor(0.498f, 1.000f, 0.831f);
+    public static readonly SVGColor Azure = new SVGColor(0.941f, 1.000f, 1.000f);
+    public static readonly SVGColor Beige = new SVGColor(0.961f, 0.961f, 0.863f);
+    public static readonly SVGColor Bisque = new SVGColor(1.000f, 0.894f, 0.769f);
+    public static readonly SVGColor Black = new SVGColor(0.000f, 0.000f, 0.000f);
+    public static readonly SVGColor Blanchedalmond = new SVGColor(1.000f, 0.922f, 0.804f);
+    public static readonly SVGColor Blueviolet = new SVGColor(0.541f, 0.169f, 0.886f);
+    public static readonly SVGColor Brown = new SVGColor(0.647f, 0.165f, 0.165f);
+    public static readonly SVGColor Burlywood = new SVGColor(0.871f, 0.722f, 0.529f);
+    public static readonly SVGColor Cadetblue = new SVGColor(0.373f, 0.620f, 0.627f);
+    public static readonly SVGColor Chartreuse = new SVGColor(0.498f, 1.000f, 0.000f);
+    public static readonly SVGColor Chocolate = new SVGColor(0.824f, 0.412f, 0.118f);
+    public static readonly SVGColor Coral = new SVGColor(1.000f, 0.498f, 0.314f);
+    public static readonly SVGColor Cornflowerblue = new SVGColor(0.392f, 0.584f, 0.929f);
+    public static readonly SVGColor Cornsilk = new SVGColor(1.000f, 0.973f, 0.863f);
+    public static readonly SVGColor Crimson = new SVGColor(0.863f, 0.078f, 0.235f);
+    public static readonly SVGColor Cyan = new SVGColor(0.000f, 1.000f, 1.000f);
+    public static readonly SVGColor Darkblue = new SVGColor(0.000f, 0.000f, 0.545f);
+    public static readonly SVGColor Darkcyan = new SVGColor(0.000f, 0.545f, 0.545f);
+    public static readonly SVGColor Darkgoldenrod = new SVGColor(0.722f, 0.525f, 0.043f);
+    public static readonly SVGColor Darkgray = new SVGColor(0.663f, 0.663f, 0.663f);
+    public static readonly SVGColor Darkgreen = new SVGColor(0.000f, 0.392f, 0.000f);
+    public static readonly SVGColor Darkgrey = new SVGColor(0.663f, 0.663f, 0.663f);
+    public static readonly SVGColor Darkkhaki = new SVGColor(0.741f, 0.718f, 0.420f);
+    public static readonly SVGColor Darkmagenta = new SVGColor(0.545f, 0.000f, 0.545f);
+    public static readonly SVGColor Darkolivegreen = new SVGColor(0.333f, 0.420f, 0.184f);
+    public static readonly SVGColor Darkorange = new SVGColor(1.000f, 0.549f, 0.000f);
+    public static readonly SVGColor Darkorchid = new SVGColor(0.600f, 0.196f, 0.800f);
+    public static readonly SVGColor Darkred = new SVGColor(0.545f, 0.000f, 0.000f);
+    public static readonly SVGColor Darksalmon = new SVGColor(0.914f, 0.588f, 0.478f);
+    public static readonly SVGColor Darkseagreen = new SVGColor(0.561f, 0.737f, 0.561f);
+    public static readonly SVGColor Darkslateblue = new SVGColor(0.282f, 0.239f, 0.545f);
+    public static readonly SVGColor Darkslategray = new SVGColor(0.184f, 0.310f, 0.310f);
+    public static readonly SVGColor Darkslategrey = new SVGColor(0.184f, 0.310f, 0.310f);
+    public static readonly SVGColor Darkturquoise = new SVGColor(0.000f, 0.808f, 0.820f);
+    public static readonly SVGColor Darkviolet = new SVGColor(0.580f, 0.000f, 0.827f);
+    public static readonly SVGColor Deeppink = new SVGColor(1.000f, 0.078f, 0.576f);
+    public static readonly SVGColor Deepskyblue = new SVGColor(0.000f, 0.749f, 1.000f);
+    public static readonly SVGColor Dimgray = new SVGColor(0.412f, 0.412f, 0.412f);
+    public static readonly SVGColor Dimgrey = new SVGColor(0.412f, 0.412f, 0.412f);
+    public static readonly SVGColor Dodgerblue = new SVGColor(0.118f, 0.565f, 1.000f);
+    public static readonly SVGColor Firebrick = new SVGColor(0.698f, 0.133f, 0.133f);
+    public static readonly SVGColor Floralwhite = new SVGColor(1.000f, 0.980f, 0.941f);
+    public static readonly SVGColor Forestgreen = new SVGColor(0.133f, 0.545f, 0.133f);
+    public static readonly SVGColor Fuchsia = new SVGColor(1.000f, 0.000f, 1.000f);
+    public static readonly SVGColor Gainsboro = new SVGColor(0.863f, 0.863f, 0.863f);
+    public static readonly SVGColor Ghostwhite = new SVGColor(0.973f, 0.973f, 1.000f);
+    public static readonly SVGColor Gold = new SVGColor(1.000f, 0.843f, 0.000f);
+    public static readonly SVGColor Goldenrod = new SVGColor(0.855f, 0.647f, 0.125f);
+    public static readonly SVGColor Gray = new SVGColor(0.502f, 0.502f, 0.502f);
+    public static readonly SVGColor Greenyellow = new SVGColor(0.678f, 1.000f, 0.184f);
+    public static readonly SVGColor Grey = new SVGColor(0.502f, 0.502f, 0.502f);
+    public static readonly SVGColor Honeydew = new SVGColor(0.941f, 1.000f, 0.941f);
+    public static readonly SVGColor Hotpink = new SVGColor(1.000f, 0.412f, 0.706f);
+    public static readonly SVGColor Indianred = new SVGColor(0.804f, 0.361f, 0.361f);
+    public static readonly SVGColor Indigo = new SVGColor(0.294f, 0.000f, 0.510f);
+    public static readonly SVGColor Ivory = new SVGColor(1.000f, 1.000f, 0.941f);
+    public static readonly SVGColor Khaki = new SVGColor(0.941f, 0.902f, 0.549f);
+    public static readonly SVGColor Lavender = new SVGColor(0.902f, 0.902f, 0.980f);
+    public static readonly SVGColor Lavenderblush = new SVGColor(1.000f, 0.941f, 0.961f);
+    public static readonly SVGColor Lawngreen = new SVGColor(0.486f, 0.988f, 0.000f);
+    public static readonly SVGColor Lemonchiffon = new SVGColor(1.000f, 0.980f, 0.804f);
+    public static readonly SVGColor Lightblue = new SVGColor(0.678f, 0.847f, 0.902f);
+    public static readonly SVGColor Lightcoral = new SVGColor(0.941f, 0.502f, 0.502f);
+    public static readonly SVGColor Lightcyan = new SVGColor(0.878f, 1.000f, 1.000f);
+    public static readonly SVGColor Lightgoldenrodyellow = new SVGColor(0.980f, 0.980f, 0.824f);
+    public static readonly SVGColor Lightgray = new SVGColor(0.827f, 0.827f, 0.827f);
+    public static readonly SVGColor Lightgreen = new SVGColor(0.565f, 0.933f, 0.565f);
+    public static readonly SVGColor Lightgrey = new SVGColor(0.827f, 0.827f, 0.827f);
+    public static readonly SVGColor Lightpink = new SVGColor(1.000f, 0.714f, 0.757f);
+    public static readonly SVGColor Lightsalmon = new SVGColor(1.000f, 0.627f, 0.478f);
+    public static readonly SVGColor Lightseagreen = new SVGColor(0.125f, 0.698f, 0.667f);
+    public static readonly SVGColor Lightskyblue = new SVGColor(0.529f, 0.808f, 0.980f);
+    public static readonly SVGColor Lightslategray = new SVGColor(0.467f, 0.533f, 0.600f);
+    public static readonly SVGColor Lightslategrey = new SVGColor(0.467f, 0.533f, 0.600f);
+    public static readonly SVGColor Lightsteelblue = new SVGColor(0.690f, 0.769f, 0.871f);
+    public static readonly SVGColor Lightyellow = new SVGColor(1.000f, 1.000f, 0.878f);
+    public static readonly SVGColor Lime = new SVGColor(0.000f, 1.000f, 0.000f);
+    public static readonly SVGColor Limegreen = new SVGColor(0.196f, 0.804f, 0.196f);
+    public static readonly SVGColor Linen = new SVGColor(0.980f, 0.941f, 0.902f);
+    public static readonly SVGColor Magenta = new SVGColor(1.000f, 0.000f, 1.000f);
+    public static readonly SVGColor Maroon = new SVGColor(0.502f, 0.000f, 0.000f);
+    public static readonly SVGColor Mediumaquamarine = new SVGColor(0.400f, 0.804f, 0.667f);
+    public static readonly SVGColor Mediumblue = new SVGColor(0.000f, 0.000f, 0.804f);
+    public static readonly SVGColor Mediumorchid = new SVGColor(0.729f, 0.333f, 0.827f);
+    public static readonly SVGColor Mediumpurple = new SVGColor(0.576f, 0.439f, 0.859f);
+    public static readonly SVGColor Mediumseagreen = new SVGColor(0.235f, 0.702f, 0.443f);
+    public static readonly SVGColor Mediumslateblue = new SVGColor(0.482f, 0.408f, 0.933f);
+    public static readonly SVGColor Mediumspringgreen = new SVGColor(0.000f, 0.980f, 0.604f);
+    public static readonly SVGColor Mediumturquoise = new SVGColor(0.282f, 0.820f, 0.800f);
+    public static readonly SVGColor Mediumvioletred = new SVGColor(0.780f, 0.082f, 0.522f);
+    public static readonly SVGColor Midnightblue = new SVGColor(0.098f, 0.098f, 0.439f);
+    public static readonly SVGColor Mintcream = new SVGColor(0.961f, 1.000f, 0.980f);
+    public static readonly SVGColor Mistyrose = new SVGColor(1.000f, 0.894f, 0.882f);
+    public static readonly SVGColor Moccasin = new SVGColor(1.000f, 0.894f, 0.710f);
+    public static readonly SVGColor Navajowhite = new SVGColor(1.000f, 0.871f, 0.678f);
+    public static readonly SVGColor Navy = new SVGColor(0.000f, 0.000f, 0.502f);
+    public static readonly SVGColor Oldlace = new SVGColor(0.992f, 0.961f, 0.902f);
+    public static readonly SVGColor Olive = new SVGColor(0.502f, 0.502f, 0.000f);
+    public static readonly SVGColor Olivedrab = new SVGColor(0.420f, 0.557f, 0.137f);
+    public static readonly SVGColor Orange = new SVGColor(1.000f, 0.647f, 0.000f);
+    public static readonly SVGColor Orangered = new SVGColor(1.000f, 0.271f, 0.000f);
+    public static readonly SVGColor Orchid = new SVGColor(0.855f, 0.439f, 0.839f);
+    public static readonly SVGColor Palegoldenrod = new SVGColor(0.933f, 0.910f, 0.667f);
+    public static readonly SVGColor Palegreen = new SVGColor(0.596f, 0.984f, 0.596f);
+    public static readonly SVGColor Paleturquoise = new SVGColor(0.686f, 0.933f, 0.933f);
+    public static readonly SVGColor Palevioletred = new SVGColor(0.859f, 0.439f, 0.576f);
+    public static readonly SVGColor Papayawhip = new SVGColor(1.000f, 0.937f, 0.835f);
+    public static readonly SVGColor Peachpuff = new SVGColor(1.000f, 0.855f, 0.725f);
+    public static readonly SVGColor Peru = new SVGColor(0.804f, 0.522f, 0.247f);
+    public static readonly SVGColor Pink = new SVGColor(1.000f, 0.753f, 0.796f);
+    public static readonly SVGColor Plum = new SVGColor(0.867f, 0.627f, 0.867f);
+    public static readonly SVGColor Powderblue = new SVGColor(0.690f, 0.878f, 0.902f);
+    public static readonly SVGColor Purple = new SVGColor(0.502f, 0.000f, 0.502f);
+    public static readonly SVGColor Rosybrown = new SVGColor(0.737f, 0.561f, 0.561f);
+    public static readonly SVGColor Royalblue = new SVGColor(0.255f, 0.412f, 0.882f);
+    public static readonly SVGColor Saddlebrown = new SVGColor(0.545f, 0.271f, 0.075f);
+    public static readonly SVGColor Salmon = new SVGColor(0.980f, 0.502f, 0.447f);
+    public static readonly SVGColor Sandybrown = new SVGColor(0.957f, 0.643f, 0.376f);
+    public static readonly SVGColor Seagreen = new SVGColor(0.180f, 0.545f, 0.341f);
+    public static readonly SVGColor Seashell = new SVGColor(1.000f, 0.961f, 0.933f);
+    public static readonly SVGColor Sienna = new SVGColor(0.627f, 0.322f, 0.176f);
+    public static readonly SVGColor Silver = new SVGColor(0.753f, 0.753f, 0.753f);
+    public static readonly SVGColor Skyblue = new SVGColor(0.529f, 0.808f, 0.922f);
+    public static readonly SVGColor Slateblue = new SVGColor(0.416f, 0.353f, 0.804f);
+    public static readonly SVGColor Slategray = new SVGColor(0.439f, 0.502f, 0.565f);
+    public static readonly SVGColor Slategrey = new SVGColor(0.439f, 0.502f, 0.565f);
+    public static readonly SVGColor Snow = new SVGColor(1.000f, 0.980f, 0.980f);
+    public static readonly SVGColor Springgreen = new SVGColor(0.000f, 1.000f, 0.498f);
+    public static readonly SVGColor Steelblue = new SVGColor(0.275f, 0.510f, 0.706f);
+    public static readonly SVGColor Tan = new SVGColor(0.824f, 0.706f, 0.549f);
+    public static readonly SVGColor Teal = new SVGColor(0.000f, 0.502f, 0.502f);
+    public static readonly SVGColor Thistle = new SVGColor(0.847f, 0.749f, 0.847f);
+    public static readonly SVGColor Tomato = new SVGColor(1.000f, 0.388f, 0.278f);
+    public static readonly SVGColor Turquoise = new SVGColor(0.251f, 0.878f, 0.816f);
+    public static readonly SVGColor Violet = new SVGColor(0.933f, 0.510f, 0.933f);
+    public static readonly SVGColor Wheat = new SVGColor(0.961f, 0.871f, 0.702f);
+    public static readonly SVGColor White = new SVGColor(1.000f, 1.000f, 1.000f);
+    public static readonly SVGColor Whitesmoke = new SVGColor(0.961f, 0.961f, 0.961f);
+    public static readonly SVGColor Yellow = new SVGColor(1.000f, 1.000f, 0.000f);
+    public static readonly SVGColor Yellowgreen = new SVGColor(0.604f, 0.804f, 0.196f);
+    public static readonly SVGColor Clear = new SVGColor(0.0f, 0.0f, 0.0f, 0.0f);
 }
 
 public class SVGPoint
@@ -1510,7 +1688,9 @@ public class SVGDocument : IDisposable
 
         // get document viewport
         if ((err = AmanithSVG.svgtDocViewportGet(this._handle, viewport)) == AmanithSVG.SVGT_NO_ERROR)
+        {
             this._viewport = new SVGViewport(viewport[0], viewport[1], viewport[2], viewport[3]);
+        }
         else
         {
             this._viewport = null;
@@ -1520,7 +1700,9 @@ public class SVGDocument : IDisposable
 
         // get viewport aspect ratio/alignment
         if ((err = AmanithSVG.svgtDocViewportAlignmentGet(this._handle, aspectRatio)) == AmanithSVG.SVGT_NO_ERROR)
+        {
             this._aspectRatio = new SVGAspectRatio((SVGAlign)aspectRatio[0], (SVGMeetOrSlice)aspectRatio[1]);
+        }
         else
         {
             this._aspectRatio = null;
@@ -1613,10 +1795,14 @@ public class SVGDocument : IDisposable
 
             // update document viewport (AmanithSVG backend)
             if (!this.UpdateViewport())
+            {
                 return zero;
+            }
             // update surface viewport (AmanithSVG backend)
             if (!surface.UpdateViewport())
+            {
                 return zero;
+            }
             // map the specified point
             if ((err = AmanithSVG.svgtPointMap(this._handle, surface.Handle, p.X, p.Y, dst)) != AmanithSVG.SVGT_NO_ERROR)
             {
@@ -1628,7 +1814,9 @@ public class SVGDocument : IDisposable
             return new SVGPoint(dst[0], dst[1]);
         }
         else
+        {
             return zero;
+        }
     }
 
 
@@ -1693,7 +1881,9 @@ public class SVGDocument : IDisposable
         set
         {
             if (value != null)
+            {
                 this._viewport = value;
+            }
         }
     }
 
@@ -1711,7 +1901,9 @@ public class SVGDocument : IDisposable
         set
         {
             if (value != null)
+            {
                 this._aspectRatio = value;
+            }
         }
     }
 
@@ -1794,8 +1986,7 @@ public class SVGSurface : IDisposable
     /*
         Resize the surface, specifying new dimensions in pixels; it returns true if the operation was completed successfully, else false.
 
-        After resizing, the surface viewport will be reset to the whole surface, and the relative transformation will be reset to
-        identity (pivot = [0; 0], angle = 0, post-translation = [0; 0]).
+        After resizing, the surface viewport will be reset to the whole surface.
     */
     public bool Resize(uint newWidth, uint newHeight)
     {
@@ -1845,16 +2036,22 @@ public class SVGSurface : IDisposable
 
         // set clear color
         if (!this.SetClearColor(clearColor))
+        {
             return false;
+        }
 
         if (document != null)
         {
             // update document viewport (AmanithSVG backend)
             if (!document.UpdateViewport())
+            {
                 return false;
+            }
             // update surface viewport (AmanithSVG backend)
             if (!this.UpdateViewport())
+            {
                 return false;
+            }
 
             // draw the document
             if ((err = AmanithSVG.svgtDocDraw(document.Handle, this.Handle, (uint)renderingQuality)) != AmanithSVG.SVGT_NO_ERROR)
@@ -1872,17 +2069,74 @@ public class SVGSurface : IDisposable
 
         // set clear color
         if (!this.SetClearColor(clearColor))
+        {
             return false;
+        }
 
         if (bin != null && bin.Rectangles.Length > 0)
         {
-            if ((err = AmanithSVG.svgtPackingDraw(bin.Index, 0, (uint)bin.Rectangles.Length, this.Handle, (uint)renderingQuality)) != AmanithSVG.SVGT_NO_ERROR)
+            //if ((err = AmanithSVG.svgtPackingDraw(bin.Index, 0, (uint)bin.Rectangles.Length, this.Handle, (uint)renderingQuality)) != AmanithSVG.SVGT_NO_ERROR)
+            if ((err = AmanithSVG.svgtPackingRectsDraw(bin.NativeRectangles, (uint)bin.Rectangles.Length, this.Handle, (uint)renderingQuality)) != AmanithSVG.SVGT_NO_ERROR)
             {
                 AmanithSVG.svgtErrorLog("Surface draw error (drawing packed bin): ", err);
                 return false;
             }
         }
         return true;
+    }
+
+    /*
+        Copy drawing surface content (i.e. pixels) into the specified destination array.
+
+        If the 'redBlueSwap' flag is true, the copy process will also swap red and blue channels for each pixel; this
+        kind of swap could be useful when dealing with OpenGL/Direct3D texture uploads (RGBA or BGRA formats).
+
+        If the 'dilateEdgesFix' flag is true, the copy process will also perform a 1-pixel dilate post-filter; this
+        dilate filter could be useful when surface pixels will be uploaded to OpenGL/Direct3D bilinear-filtered textures.
+    */
+    public bool Copy(int[] dstPixels32, bool redBlueSwap, bool dilateEdgesFix)
+    {
+        if (dstPixels32 == null)
+        {
+            return false;
+        }
+        else
+        {
+            int n = (int)Width * (int)Height;
+            // dstPixels32 must contain at least 'n' pixels
+            if (dstPixels32.Length < n)
+            {
+                return false;
+            }
+            else
+            {
+                bool ok = false;
+                // "pin" the array in memory, so we can pass direct pointer to the native plugin, without costly marshaling array of structures
+                GCHandle bufferHandle = GCHandle.Alloc(dstPixels32, GCHandleType.Pinned);
+
+                try
+                {
+                    System.IntPtr bufferPtr = bufferHandle.AddrOfPinnedObject();
+                    // copy pixels from internal drawing surface to destination pixels array; NB: AmanithSVG buffer is always in BGRA format (i.e. B = LSB, A = MSB)
+                    if (AmanithSVG.svgtSurfaceCopy(this.Handle, bufferPtr,
+                                                   redBlueSwap ? AmanithSVG.SVGT_TRUE : AmanithSVG.SVGT_FALSE,
+                                                   dilateEdgesFix ? AmanithSVG.SVGT_TRUE : AmanithSVG.SVGT_FALSE) == AmanithSVG.SVGT_NO_ERROR)
+                    {
+                        ok = true;
+                    }
+                }
+                finally
+                {
+                    // free the pinned array handle
+                    if (bufferHandle.IsAllocated)
+                    {
+                        bufferHandle.Free();
+                    }
+                }
+
+                return ok;
+            }
+        }
     }
 
 #if UNITY_ENGINE
@@ -2085,7 +2339,9 @@ public class SVGSurface : IDisposable
         set
         {
             if (value != null)
+            {
                 this._viewport = value;
+            }
         }
     }
 
@@ -2137,10 +2393,185 @@ public class SVGSurface : IDisposable
     private SVGViewport _viewport;
 }
 
+public enum SVGScalerMatchMode
+{
+    // Do not scale packed SVG.
+    None = 0,
+    // Scale each packed SVG according to width.
+    Horizontal = 1,
+    // Scale each packed SVG according to height.
+    Vertical = 2,
+    // Scale each packed SVG according to the minimum dimension between width and height.
+    MinDimension = 3,
+    // Scale each packed SVG according to the maximum dimension between width and height.
+    MaxDimension = 4,
+    // Expand the canvas area either horizontally or vertically, so the size of the canvas will never be smaller than the reference.
+    Expand = 5,
+    // Crop the canvas area either horizontally or vertically, so the size of the canvas will never be larger than the reference.
+    Shrink = 6,
+    // Scale each packed SVG with the width as reference, the height as reference, or something in between.
+    MatchWidthOrHeight = 7
+};
+
+public class SVGScaler
+{
+    // Constructor.
+    public SVGScaler(float referenceWidth, float referenceHeight, SVGScalerMatchMode matchMode, float match, float offsetScale)
+    {
+        _referenceWidth = referenceWidth;
+        _referenceHeight = referenceHeight;
+        _matchMode = matchMode;
+        _match = match;
+        _offsetScale = offsetScale;
+    }
+
+    public float ReferenceWidth
+    {
+        get
+        {
+            return this._referenceWidth;
+        }
+        set
+        {
+            this._referenceWidth = value;
+        }
+    }
+
+    public float ReferenceHeight
+    {
+        get
+        {
+            return this._referenceHeight;
+        }
+        set
+        {
+            this._referenceHeight = value;
+        }
+    }
+
+    public SVGScalerMatchMode MatchMode
+    {
+        get
+        {
+            return this._matchMode;
+        }
+        set
+        {
+            this._matchMode = value;
+        }
+    }
+
+    public float Match
+    {
+        get
+        {
+            return this._match;
+        }
+        set
+        {
+            this._match = value;
+        }
+    }
+
+    public float OffsetScale
+    {
+        get
+        {
+            return this._offsetScale;
+        }
+        set
+        {
+            this._offsetScale = value;
+        }
+    }
+
+    public float ScaleFactorCalc(float currentWidth, float currentHeight)
+    {
+        float scale;
+        bool referenceLandscape, currentLandscape;
+
+        switch (this._matchMode)
+        {
+            case SVGScalerMatchMode.Horizontal:
+                scale = currentWidth / this._referenceWidth;
+                break;
+
+            case SVGScalerMatchMode.Vertical:
+                scale = currentHeight / this._referenceHeight;
+                break;
+
+            case SVGScalerMatchMode.MinDimension:
+                referenceLandscape = (this._referenceWidth > this._referenceHeight) ? true : false;
+                currentLandscape = (currentWidth > currentHeight) ? true : false;
+                if (referenceLandscape != currentLandscape)
+                {
+                    scale = (currentWidth <= currentHeight) ? (currentWidth / this._referenceHeight) : (currentHeight / this._referenceWidth);
+                }
+                else
+                {
+                    scale = (currentWidth <= currentHeight) ? (currentWidth / this._referenceWidth) : (currentHeight / this._referenceHeight);
+                }
+                break;
+
+            case SVGScalerMatchMode.MaxDimension:
+                referenceLandscape = (this._referenceWidth > this._referenceHeight) ? true : false;
+                currentLandscape = (currentWidth > currentHeight) ? true : false;
+                if (referenceLandscape != currentLandscape)
+                {
+                    scale = (currentWidth >= currentHeight) ? (currentWidth / this._referenceHeight) : (currentHeight / this._referenceWidth);
+                }
+                else
+                {
+                    scale = (currentWidth >= currentHeight) ? (currentWidth / this._referenceWidth) : (currentHeight / this._referenceHeight);
+                }
+                break;
+
+            case SVGScalerMatchMode.Expand:
+                scale = Math.Max(currentWidth / this._referenceWidth, currentHeight / this._referenceHeight);
+                break;
+
+            case SVGScalerMatchMode.Shrink:
+                scale = Math.Min(currentWidth / this._referenceWidth, currentHeight / this._referenceHeight);
+                break;
+
+            case SVGScalerMatchMode.MatchWidthOrHeight:
+            {
+                /*
+                    We take the log of the relative width and height before taking the average. Then we transform it back in the original space.
+                    The reason to transform in and out of logarithmic space is to have better behavior.
+                    If one axis has twice resolution and the other has half, it should even out if widthOrHeight value is at 0.5.
+                    In normal space the average would be (0.5 + 2) / 2 = 1.25
+                    In logarithmic space the average is (-1 + 1) / 2 = 0
+                */
+                float logWidth = (float)(Math.Log(currentWidth / _referenceWidth) / Math.Log(2));
+                float logHeight = (float)(Math.Log(currentHeight / _referenceHeight) / Math.Log(2));
+                // clamp between 0 and 1
+                float t = Math.Max(0, Math.Min(1.0f, this._match));
+                // lerp
+                float logWeightedAverage = ((1.0f - t) * logWidth) + (t * logHeight);
+                scale = (float)Math.Pow(2, logWeightedAverage);
+                break;
+            }
+
+            default:
+                scale = 1.0f;
+                break;
+        }
+
+        return (scale * this._offsetScale);
+    }
+
+    private float _referenceWidth;
+    private float _referenceHeight;
+    private SVGScalerMatchMode _matchMode;
+    private float _match;
+    private float _offsetScale;
+}
+
 public class SVGPackedRectangle
 {
     // Constructor.
-    public SVGPackedRectangle(uint docHandle, uint elemIdx, string name, int originalX, int originalY, int x, int y, int width, int height, int zOrder, float dstViewportWidth, float dstViewportHeight)
+    public SVGPackedRectangle(uint docHandle, uint elemIdx, string name, int originalX, int originalY, int x, int y, int width, int height, int zOrder)
     {
         this._docHandle = docHandle;
         this._elemIdx = elemIdx;
@@ -2152,8 +2583,6 @@ public class SVGPackedRectangle
         this._width = width;
         this._height = height;
         this._zOrder = zOrder;
-        this._dstViewportWidth = dstViewportWidth;
-        this._dstViewportHeight = dstViewportHeight;
     }
 
     public uint DocHandle
@@ -2236,22 +2665,6 @@ public class SVGPackedRectangle
         }
     }
 
-    public float DstViewportWidth
-    {
-        get
-        {
-            return this._dstViewportWidth;
-        }
-    }
-
-    public float DstViewportHeight
-    {
-        get
-        {
-            return this._dstViewportHeight;
-        }
-    }
-
     // SVG document handle
     private uint _docHandle;
     // SVG element (unique) identifier inside its document
@@ -2269,23 +2682,30 @@ public class SVGPackedRectangle
     private int _height;
     // Z-order
     private int _zOrder;
-    // The used destination viewport width (induced by packing scale factor)
-    private float _dstViewportWidth;
-    // The used destination viewport height (induced by packing scale factor)
-    private float _dstViewportHeight;
 }
 
 public class SVGPackedBin
 {
     // Constructor
-    internal SVGPackedBin(uint index, uint width, uint height, uint rectsCount)
+    internal SVGPackedBin(uint index, uint width, uint height, uint rectsCount, System.IntPtr nativeRectsPtr)
     {
         this._index = index;
         this._width = width;
         this._height = height;
         this._rects = new SVGPackedRectangle[rectsCount];
+        this._nativeRects = System.IntPtr.Zero;
+        this.Build(nativeRectsPtr, rectsCount);
     }
-    
+
+    // Destructor.
+    ~SVGPackedBin()
+    {
+        if (this._nativeRects != System.IntPtr.Zero)
+        {
+            Marshal.FreeHGlobal(this._nativeRects);
+        }
+    }
+
     // Bin index
     public uint Index
     {
@@ -2320,19 +2740,52 @@ public class SVGPackedBin
         {
             return this._rects;
         }
-    }   
+    }
 
-    internal string GenElementName(AmanithSVG.SVGTPackedRect rect)
+    internal System.IntPtr NativeRectangles
+    {
+        get
+        {
+            return this._nativeRects;
+        }
+    }
+
+    private string GenElementName(AmanithSVG.SVGTPackedRect rect)
     {
         // build element name to be displayed in Unity editor
-        string name = "";
-        
-        if (rect.elemName != System.IntPtr.Zero)
-            name += System.Runtime.InteropServices.Marshal.PtrToStringAnsi(rect.elemName);
-        else
-            name += rect.elemIdx;
+        return (rect.elemName != System.IntPtr.Zero) ? System.Runtime.InteropServices.Marshal.PtrToStringAnsi(rect.elemName) : rect.elemIdx.ToString();
+    }
 
-        return name;
+    private void Build(System.IntPtr nativeRectsPtr, uint rectsCount)
+    {
+        uint i;
+    #if UNITY_WP_8_1 && !UNITY_EDITOR
+        int rectSize = Marshal.SizeOf<AmanithSVG.SVGTPackedRect>();
+    #else
+        int rectSize = Marshal.SizeOf(typeof(AmanithSVG.SVGTPackedRect));
+    #endif
+        System.IntPtr rectsCopyPtr = Marshal.AllocHGlobal((int)rectsCount * rectSize);
+
+        // keep track of the native buffer
+        this._nativeRects = rectsCopyPtr;
+
+        // fill rectangles
+        for (i = 0; i < rectsCount; ++i)
+        {
+            // rectangle generated by AmanithSVG packer
+        #if UNITY_WP_8_1 && !UNITY_EDITOR
+            AmanithSVG.SVGTPackedRect rect = (AmanithSVG.SVGTPackedRect)Marshal.PtrToStructure<AmanithSVG.SVGTPackedRect>(rectsPtr);
+        #else
+            AmanithSVG.SVGTPackedRect rect = (AmanithSVG.SVGTPackedRect)Marshal.PtrToStructure(nativeRectsPtr, typeof(AmanithSVG.SVGTPackedRect));
+        #endif
+            // set the rectangle
+            this._rects[i] = new SVGPackedRectangle(rect.docHandle, rect.elemIdx, this.GenElementName(rect), rect.originalX, rect.originalY, rect.x, rect.y, rect.width, rect.height, rect.zOrder/*, rect.dstViewportWidth, rect.dstViewportHeight*/);
+            // copy 
+            Marshal.StructureToPtr(rect, rectsCopyPtr, false);
+            // next packed rectangle
+            nativeRectsPtr = (System.IntPtr)(nativeRectsPtr.ToInt64() + rectSize);
+            rectsCopyPtr = (System.IntPtr)(rectsCopyPtr.ToInt64() + rectSize);
+        }
     }
 
     // Bin index.
@@ -2343,6 +2796,8 @@ public class SVGPackedBin
     private uint _height;
     // Packed rectangles inside the bin.
     SVGPackedRectangle[] _rects;
+    // A copy of (native) rectangles; to be used for drawing purposes only.
+    System.IntPtr _nativeRects;
 }
 
 public class SVGPacker
@@ -2410,6 +2865,14 @@ public class SVGPacker
         }
     }
 
+    /*!
+        Start a packing task: one or more SVG documents will be collected and packed into bins, for the generation of atlases.
+
+        Every collected SVG document/element will be packed into rectangular bins, whose dimensions won't exceed the specified 'maxTexturesDimension' (see constructor), in pixels.
+        If true, 'pow2Textures' (see constructor) will force bins to have power-of-two dimensions.
+        Each rectangle will be separated from the others by the specified 'border' (see constructor), in pixels.
+        The specified 'scale' (see constructor) factor will be applied to all collected SVG documents/elements, in order to realize resolution-independent atlases.
+    */
     public bool Begin()
     {
         int err = AmanithSVG.svgtPackingBegin(this._maxTexturesDimension, this._border, this._pow2Textures ? AmanithSVG.SVGT_TRUE : AmanithSVG.SVGT_FALSE, this._scale);
@@ -2422,6 +2885,16 @@ public class SVGPacker
         return true;
     }
 
+    /*!
+        Add an SVG document to the current packing task.
+
+        If true, 'explodeGroups' tells the packer to not pack the whole SVG document, but instead to pack each first-level element separately.
+        The additional 'scale' is used to adjust the document content to the other documents involved in the current packing process.
+
+        The function will return some useful information, an array of 2 entries and it will be filled with:
+        - info[0] = number of collected bounding boxes
+        - info[1] = the actual number of packed bounding boxes (boxes whose dimensions exceed the 'maxTexturesDimension' value specified through the constructor, will be discarded)
+    */
     public uint[] Add(SVGDocument svgDoc, bool explodeGroup, float scale)
     {
         uint[] info = new uint[2];
@@ -2439,9 +2912,15 @@ public class SVGPacker
         return info;
     }
 
+    /*!
+        Close the current packing task and, if specified, perform the real packing algorithm.
+
+        All collected SVG documents/elements (actually their bounding boxes) are packed into bins for later use (i.e. atlases generation).
+        After calling this function, the application could use the SVGSurface.Draw method in order to draw the returned packed elements.
+    */
     public SVGPackedBin[] End(bool performPacking)
     {
-        int err, binsCount, rectSize;
+        int err, binsCount;
         uint i, j;
         uint[] binInfo;
         SVGPackedBin[] bins;
@@ -2454,33 +2933,34 @@ public class SVGPacker
         }
         // if requested, close the packing process without doing anything
         if (!performPacking)
+        {
             return null;
+        }
         // get number of generated bins
         binsCount = AmanithSVG.svgtPackingBinsCount();
         if (binsCount <= 0)
+        {
             return null;
+        }
         // allocate space for bins
         bins = new SVGPackedBin[binsCount];
         if (bins == null)
+        {
             return null;
+        }
         // allocate space to store information of a single bin
         binInfo = new uint[3];
         if (binInfo == null)
+        {
             return null;
-
-    #if UNITY_WP_8_1 && !UNITY_EDITOR
-        rectSize = Marshal.SizeOf<AmanithSVG.SVGTPackedRect>();
-    #else
-        rectSize = Marshal.SizeOf(typeof(AmanithSVG.SVGTPackedRect));
-    #endif
+        }
 
         // fill bins information
         j = (uint)binsCount;
         for (i = 0; i < j; ++i)
         {
-            uint k;
             System.IntPtr rectsPtr;
-            SVGPackedBin bin;
+
             // get bin information
             if ((err = AmanithSVG.svgtPackingBinInfo(i, binInfo)) != AmanithSVG.SVGT_NO_ERROR)
             {
@@ -2490,26 +2970,11 @@ public class SVGPacker
             // get packed rectangles
             rectsPtr = AmanithSVG.svgtPackingBinRects(i);
             if (rectsPtr == System.IntPtr.Zero)
-                return null;
-            // create new bin and store relative information (width, height, rectangles count)
-            bin = new SVGPackedBin(i, binInfo[0], binInfo[1], binInfo[2]);
-            // fill rectangles
-            for (k = 0; k < binInfo[2]; ++k)
             {
-                // rectangle generated by AmanithSVG packer
-            #if UNITY_WP_8_1 && !UNITY_EDITOR
-                AmanithSVG.SVGTPackedRect rect = (AmanithSVG.SVGTPackedRect)Marshal.PtrToStructure<AmanithSVG.SVGTPackedRect>(rectsPtr);
-            #else
-                AmanithSVG.SVGTPackedRect rect = (AmanithSVG.SVGTPackedRect)Marshal.PtrToStructure(rectsPtr, typeof(AmanithSVG.SVGTPackedRect));
-            #endif
-                // build element name to be displayed in Unity editor
-                string name = bin.GenElementName(rect);
-                // set the rectangle
-                bin.Rectangles[k] = new SVGPackedRectangle(rect.docHandle, rect.elemIdx, name, rect.originalX, rect.originalY, rect.x, rect.y, rect.width, rect.height, rect.zOrder, rect.dstViewportWidth, rect.dstViewportHeight);
-                // next packed rectangle
-                rectsPtr = (System.IntPtr)(rectsPtr.ToInt64() + rectSize);
+                return null;
             }
-            bins[i] = bin;
+
+            bins[i] = new SVGPackedBin(i, binInfo[0], binInfo[1], binInfo[2], rectsPtr);
         }
         return bins;
     }
@@ -2517,7 +2982,9 @@ public class SVGPacker
     private void FixMaxDimension()
     {
         if (this._maxTexturesDimension == 0)
+        {
             this._maxTexturesDimension = 1;
+        }
         else
         {
             // check power-of-two option
@@ -2532,7 +2999,9 @@ public class SVGPacker
         // border must allow a packable region of at least one pixel
         uint maxAllowedBorder = ((this._maxTexturesDimension & 1) != 0) ? (this._maxTexturesDimension / 2) : ((this._maxTexturesDimension - 1) / 2);
         if (this._border > maxAllowedBorder)
+        {
             this._border = maxAllowedBorder;
+        }
     }
 
     private float _scale;
@@ -2555,7 +3024,9 @@ static public class SVGAssets
         {
         #if UNITY_ENGINE
             if (Application.isPlaying)
+            {
                 return (uint)Screen.width;
+            }
             Vector2 view = SVGUtils.GetGameView();
             return (uint)view.x;
         #else
@@ -2571,7 +3042,9 @@ static public class SVGAssets
         {
         #if UNITY_ENGINE
             if (Application.isPlaying)
+            {
                 return (uint)Screen.height;
+            }
             Vector2 view = SVGUtils.GetGameView();
             return (uint)view.y;
         #else
@@ -2616,10 +3089,14 @@ static public class SVGAssets
 
         // initialize the library, if required
         if (!SVGAssets.Init())
+        {
             return null;
+        }
         // create the surface
         if ((handle = AmanithSVG.svgtSurfaceCreate(width, height)) != AmanithSVG.SVGT_INVALID_HANDLE)
+        {
             return new SVGSurface(handle);
+        }
         AmanithSVG.svgtErrorLog("CreateSurface error (allocating surface): ", AmanithSVG.SVGT_OUT_OF_MEMORY_ERROR);
         return null;
     }
@@ -2631,10 +3108,14 @@ static public class SVGAssets
 
         // initialize the library, if required
         if (!SVGAssets.Init())
+        {
             return null;
+        }
         // create the document
         if ((handle = AmanithSVG.svgtDocCreate(xmlText)) != AmanithSVG.SVGT_INVALID_HANDLE)
+        {
             return new SVGDocument(handle);
+        }
 
         AmanithSVG.svgtErrorLog("CreateDocument error (parsing document): ", AmanithSVG.SVGT_OUT_OF_MEMORY_ERROR);
         return null;
@@ -2644,7 +3125,9 @@ static public class SVGAssets
     {
         // initialize the library, if required
         if (!SVGAssets.Init())
+        {
             return null;
+        }
         
         return new SVGPacker(scale, maxTexturesDimension, border, pow2Textures);
     }

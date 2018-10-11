@@ -401,18 +401,10 @@ static public class SVGUtils
     static public Vector2 GetGameView()
     {
     #if UNITY_EDITOR
-        //System.Type T = System.Type.GetType("UnityEditor.GameView,UnityEditor");
-        //System.Reflection.MethodInfo getSizeOfMainGameView = T.GetMethod("GetSizeOfMainGameView", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-        //System.Object resolution = getSizeOfMainGameView.Invoke(null, null);
-        //System.Reflection.MethodInfo getMainGameViewTargetSize = T.GetMethod("GetMainGameViewTargetSize", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-        //System.Object resolution = getMainGameViewTargetSize.Invoke(null, null);
-        //return (Vector2)resolution;
-        Vector2 resolution = Handles.GetMainGameViewSize();
-        return resolution;
-
+        return Handles.GetMainGameViewSize();
     #else
         return Vector2.zero;
-#endif
+    #endif
     }
 #endif // UNITY_ENGINE
 
@@ -496,5 +488,6 @@ static public class SVGUtils
     }
 
 #endif // UNITY_EDITOR
+
 #endif // UNITY_ENGINE
 }

@@ -36,47 +36,55 @@
 
 package com.mazatech.svgt;
 
-public enum SVGTMeetOrSlice {
+public class SVGPoint {
 
-    /*
-        Scale the graphic such that:
-        - aspect ratio is preserved
-        - the entire viewBox is visible within the viewport
-        - the viewBox is scaled up as much as possible, while still meeting the other criteria
+    public static final SVGPoint Zero = new SVGPoint(0, 0);
 
-        In this case, if the aspect ratio of the graphic does not match the viewport, some of the viewport will
-        extend beyond the bounds of the viewBox (i.e., the area into which the viewBox will draw will be smaller
-        than the viewport).
-    */
-    Meet(AmanithSVG.SVGT_ASPECT_RATIO_MEET),
+    // Constructor.
+    public SVGPoint() {
 
-    /*
-        Scale the graphic such that:
-        - aspect ratio is preserved
-        - the entire viewport is covered by the viewBox
-        - the viewBox is scaled down as much as possible, while still meeting the other criteria
-        
-        In this case, if the aspect ratio of the viewBox does not match the viewport, some of the viewBox will
-        extend beyond the bounds of the viewport (i.e., the area into which the viewBox will draw is larger
-        than the viewport).
-    */
-    Slice(AmanithSVG.SVGT_ASPECT_RATIO_SLICE);
-
-    SVGTMeetOrSlice(int svgtEnum) {
-        
-        _svgtEnum = svgtEnum;
+        set(0, 0);
     }
 
-    public int getValue() {
+    public SVGPoint(final SVGPoint src) {
 
-        return _svgtEnum;
+        set(src._x, src._y);
     }
 
-    public static SVGTMeetOrSlice fromValue(int svgtEnum) {
+    // Set constructor.
+    public SVGPoint(float x, float y) {
 
-        return _allValues[svgtEnum];
+        set(x, y);
     }
 
-    private final int _svgtEnum;
-    private static SVGTMeetOrSlice[] _allValues = values();
+    public void set(float x, float y) {
+
+        _x = x;
+        _y = y;
+    }
+
+    // Abscissa.
+    public float getX() {
+
+        return _x;
+    }
+
+    public void setX(float x) {
+
+        _x = x;
+    }
+
+    // Ordinate.
+    public float getY() {
+
+        return _y;
+    }
+
+    public void setY(float y) {
+
+        _y = y;
+    }
+
+    private float _x;
+    private float _y;
 }
