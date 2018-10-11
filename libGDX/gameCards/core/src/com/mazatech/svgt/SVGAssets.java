@@ -33,7 +33,8 @@
 ** For any information, please contact info@mazatech.com
 ** 
 ****************************************************************************/
-package com.mazatech.gdx;
+
+package com.mazatech.svgt;
 
 // Java
 import java.io.File;
@@ -45,12 +46,9 @@ import java.io.FileNotFoundException;
 
 // libGDX
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.utils.SharedLibraryLoader;
+import com.badlogic.gdx.files.FileHandle;
 
-// AmanithSVG
-import com.mazatech.svgt.AmanithSVG;
-
-public final class SVGManager {
+public final class SVGAssets {
 
     private static boolean copyStreams(InputStream input,
                                        OutputStream output) throws IOException {
@@ -85,7 +83,7 @@ public final class SVGManager {
     private static boolean loadNativeDesktop(String srcPath, String outputFileName) {
 
         boolean ok = false;
-        InputStream input = SharedLibraryLoader.class.getResourceAsStream(srcPath);
+        InputStream input = AmanithSVG.class.getResourceAsStream(srcPath);
 
         if (input != null) {
 
@@ -104,16 +102,16 @@ public final class SVGManager {
                 }
             }
             catch (FileNotFoundException e) {
-                Gdx.app.error("SVGManager", "File " + outputFile.getAbsolutePath() + " not found");
+                System.out.println("SVGManager: File " + outputFile.getAbsolutePath() + " not found");
             }
             catch (UnsatisfiedLinkError e) {
-                Gdx.app.error("SVGManager", "Native code library failed to load " + outputFile.getAbsolutePath() + ", the file does not exist.");
+                System.out.println("SVGManager: Native code library failed to load " + outputFile.getAbsolutePath() + ", the file does not exist.");
             }
             catch (SecurityException e) {
-                Gdx.app.error("SVGManager", "Native code library failed to load " + outputFile.getAbsolutePath() + ", the security manager doesn't allow loading of the specified dynamic library.");
+                System.out.println("SVGManager: Native code library failed to load " + outputFile.getAbsolutePath() + ", the security manager doesn't allow loading of the specified dynamic library.");
             }
             catch (IOException e) {
-                Gdx.app.error("SVGManager", "Error extracting file " + srcPath + " to " + outputFile.getAbsolutePath());
+                System.out.println("SVGManager: Error extracting file " + srcPath + " to " + outputFile.getAbsolutePath());
             }
         }
 
@@ -212,12 +210,30 @@ public final class SVGManager {
 
     private static void initAmanithSVG() {
 
-        AmanithSVG.svgtInit(Gdx.graphics.getBackBufferWidth(), Gdx.graphics.getBackBufferHeight(), Gdx.graphics.getPpiX());
+        AmanithSVG.svgtInit(getScreenResolutionWidth(), getScreenResolutionHeight(), getScreenDpi());
     }
 
     private static void destroyAmanithSVG() {
 
         AmanithSVG.svgtDone();
+    }
+
+    // NB: you MUST implement this functionality according to the underlying graphics system; this implementation is for libGDX
+    public static int getScreenResolutionWidth() {
+
+        return Gdx.graphics.getBackBufferWidth();
+    }
+
+    // NB: you MUST implement this functionality according to the underlying graphics system; this implementation is for libGDX
+    public static int getScreenResolutionHeight() {
+
+        return Gdx.graphics.getBackBufferHeight();
+    }
+
+    // NB: you MUST implement this functionality according to the underlying graphics system; this implementation is for libGDX
+    public static float getScreenDpi() {
+
+        return Gdx.graphics.getPpiX();
     }
 
     public static void init() {
@@ -236,6 +252,77 @@ public final class SVGManager {
         if (_isInitialized) {
             destroyAmanithSVG();
         }
+    }
+
+    public static SVGSurface createSurface(int width, int height) {
+
+        SVGSurface result = null;
+
+        // ensure AmanithSVG library initialization
+        init();
+
+        if ((width <= 0) || (height <= 0)) {
+            throw new IllegalArgumentException("Invalid (negative or zero) surface dimensions");
+        }
+        else {
+            // create and keep track of the AmanithSVG surface handle
+            SVGTHandle surface = AmanithSVG.svgtSurfaceCreate(width, height);
+            if (surface != null) {
+                result = new SVGSurface(surface.getNativeHandle());
+            }
+            else {
+                throw new IllegalStateException("Native surface cannot be created; system is out of memory");
+            }
+        }
+
+        return result;
+    }
+
+    public static SVGDocument createDocument(String xmlText) {
+
+        SVGDocument result = null;
+
+        // ensure AmanithSVG library initialization
+        init();
+
+        if ((xmlText == null) || (xmlText.length() == 0)) {
+            throw new IllegalArgumentException("xml == null or empty");
+        }
+        else {
+            // create AmanithSVG document handle
+            SVGTHandle document = AmanithSVG.svgtDocCreate(xmlText);
+
+            if (document == null) {
+                throw new IllegalStateException("Error building SVGDocument from xml");
+            }
+            else {
+                result = new SVGDocument(document.getNativeHandle());
+            }
+        }
+
+        return result;
+    }
+
+    public static SVGDocument createDocument(FileHandle file) {
+
+        SVGDocument result = null;
+
+        if (file == null) {
+            throw new IllegalArgumentException("file == null");
+        }
+        else {
+            result = createDocument(file.readString());
+        }
+
+        return result;
+    }
+
+    public static SVGPacker createPacker(float scale, int maxTexturesDimension, int border, boolean pow2Textures) {
+
+        // ensure AmanithSVG library initialization
+        init();
+
+        return new SVGPacker(scale, maxTexturesDimension, border, pow2Textures);
     }
 
     private static boolean _isInitialized = false;

@@ -33,16 +33,8 @@
 ** For any information, please contact info@mazatech.com
 ** 
 ****************************************************************************/
-package com.mazatech.gdx;
 
-// libGDX
-import com.badlogic.gdx.utils.Disposable;
-
-// AmanithSVG
-import com.mazatech.svgt.AmanithSVG;
-import com.mazatech.svgt.SVGTHandle;
-import com.mazatech.svgt.SVGTError;
-import com.mazatech.svgt.SVGTRenderingQuality;
+package com.mazatech.svgt;
 
 /*
     Drawing surface.
@@ -53,38 +45,27 @@ import com.mazatech.svgt.SVGTRenderingQuality;
     Coordinate system is the same of SVG specifications: top/left pixel has coordinate (0, 0), with the positive x-axis pointing towards
     the right and the positive y-axis pointing down.
 */
-public class SVGSurface implements Disposable {
+public class SVGSurface {
 
     // Constructor.
-    public SVGSurface(int width, int height) {
+    public SVGSurface(int handle) {
 
-        if ((width <= 0) || (height <= 0)) {
-            throw new IllegalArgumentException("Invalid (negative or zero) surface dimensions");
+        SVGTError err;
+        float[] viewport = new float[4];
+
+        // wrap the native handle
+        _surface = new SVGTHandle(handle);
+
+        // get surface viewport
+        if ((err = AmanithSVG.svgtSurfaceViewportGet(_surface, viewport)) == SVGTError.None) {
+            _viewport = new SVGViewport(viewport[0], viewport[1], viewport[2], viewport[3]);
         }
         else {
-            // create and keep track of the AmanithSVG surface handle
-            _surface = AmanithSVG.svgtSurfaceCreate(width, height);
-            if (_surface != null) {
-
-                SVGTError err;
-                float[] viewport = new float[4];
-
-                // get surface viewport
-                if ((err = AmanithSVG.svgtSurfaceViewportGet(_surface, viewport)) == SVGTError.None) {
-                    _viewport = new SVGViewport(viewport[0], viewport[1], viewport[2], viewport[3]);
-                }
-                else {
-                    _viewport = null;
-                    throw new IllegalStateException("Error getting surface viewport; error is " + err);
-                }
-            }
-            else {
-                throw new IllegalStateException("Native surface cannot be created; system is out of memory");
-            }
+            _viewport = null;
+            throw new IllegalStateException("Error getting surface viewport; error is " + err);
         }
     }
 
-    @Override
     public void dispose() {
 
         // dispose unmanaged resources

@@ -13,6 +13,11 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 
 // AmanithSVG
 import com.mazatech.svgt.SVGTRenderingQuality;
+import com.mazatech.svgt.SVGAssets;
+import com.mazatech.svgt.SVGColor;
+import com.mazatech.svgt.SVGViewport;
+import com.mazatech.svgt.SVGDocument;
+import com.mazatech.svgt.SVGSurface;
 
 public class SVGTexture extends Texture {
 
@@ -86,7 +91,7 @@ public class SVGTexture extends Texture {
 
             if (_doc == null) {
                 // create and parse the SVG document
-                _doc = new SVGDocument(_xml);
+                _doc = SVGAssets.createDocument(_xml);
                 // unreference the XML string
                 _xml = null;
             }
@@ -170,7 +175,7 @@ public class SVGTexture extends Texture {
             }
 
             // create the SVG drawing surface
-            return new SVGSurface(_width, _height);
+            return SVGAssets.createSurface(_width, _height);
         }
 
         @Override

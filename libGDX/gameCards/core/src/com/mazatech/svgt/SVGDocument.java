@@ -33,81 +33,25 @@
 ** For any information, please contact info@mazatech.com
 ** 
 ****************************************************************************/
-package com.mazatech.gdx;
 
-// libGDX
-import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.utils.Disposable;
+package com.mazatech.svgt;
 
-// AmanithSVG
-import com.mazatech.svgt.AmanithSVG;
-import com.mazatech.svgt.SVGTHandle;
-import com.mazatech.svgt.SVGTError;
-import com.mazatech.svgt.SVGAlignment;
+public class SVGDocument {
 
-public class SVGDocument implements Disposable {
-
-    public SVGDocument(FileHandle file) {
-
-        if (file == null) {
-            throw new IllegalArgumentException("file == null");
-        }
-        else {
-            _file = file;
-            // create and parse the SVG document
-            SVGTError err = parse(_file.readString());
-            if (err != SVGTError.None) {
-                throw new IllegalStateException("Error building SVGDocument from file; error is " + err);
-            }
-        }
-    }
-
-    public SVGDocument(String xml) {
-
-        if ((xml == null) || (xml.length() == 0)) {
-            throw new IllegalArgumentException("xml == null or empty");
-        }
-        else {
-            // create and parse the SVG document
-            SVGTError err = parse(xml);
-            if (err != SVGTError.None) {
-                throw new IllegalStateException("Error building SVGDocument from xml; error is " + err);
-            }
-        }
-    }
-
-    private SVGTError parse(String xml) {
+    public SVGDocument(int handle) {
 
         SVGTError err;
+        float[] viewport = new float[4];
 
-        if ((xml != null) && (xml.length() > 0)) {
-
-            // create and keep track of the AmanithSVG document handle
-            _doc = AmanithSVG.svgtDocCreate(xml);
-
-            if (_doc != null) {
-                
-                float[] viewport = new float[4];
-                
-                // get document viewport
-                if ((err = AmanithSVG.svgtDocViewportGet(_doc, viewport)) == SVGTError.None) {
-                    _viewport = new SVGViewport(viewport[0], viewport[1], viewport[2], viewport[3]);
-                    // get viewport aspect ratio/alignment
-                    _aspectRatio = AmanithSVG.svgtDocViewportAlignmentGet(_doc);
-                }
-            }
-            else {
-                err = SVGTError.OutOfMemory;
-            }
+        _doc = new SVGTHandle(handle);
+        // get document viewport
+        if ((err = AmanithSVG.svgtDocViewportGet(_doc, viewport)) == SVGTError.None) {
+            _viewport = new SVGViewport(viewport[0], viewport[1], viewport[2], viewport[3]);
+            // get viewport aspect ratio/alignment
+            _aspectRatio = AmanithSVG.svgtDocViewportAlignmentGet(_doc);
         }
-        else {
-            err = SVGTError.IllegalArgument;
-        }
-
-        return err;
     }
 
-    @Override
     public void dispose() {
 
         // dispose unmanaged resources
@@ -255,7 +199,6 @@ public class SVGDocument implements Disposable {
         return err;
     }
 
-    private FileHandle _file;
     // Document native handle.
     private SVGTHandle _doc = null;
     // Viewport.

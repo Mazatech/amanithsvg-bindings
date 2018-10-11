@@ -34,34 +34,19 @@
 ** 
 ****************************************************************************/
 
-package com.mazatech.gdx;
-
-// AmanithSVG
-import com.mazatech.svgt.AmanithSVG;
-import com.mazatech.svgt.SVGTError;
+package com.mazatech.svgt;
 
 public class SVGPacker {
 
-    class SVGPackerPage {
+    public class SVGPackedBin {
 
-        private SVGPackerPage(int index) {
+        private SVGPackedBin(int index, int width, int height, int rectsCount, java.nio.ByteBuffer nativeRects) {
 
             _index = index;
-            build();
-        }
-
-        private void build() {
-
-            int[] binInfo = new int[3];
-
-            // get information relative to the surface/page
-            AmanithSVG.svgtPackingBinInfo(_index, binInfo);
-            // store information relative to the surface/page
-            _width = binInfo[0];
-            _height = binInfo[1];
-            _nativeRectCount = binInfo[2];
-            // get native rectangles
-            _nativeRects = AmanithSVG.svgtPackingBinRects(_index);
+            _width = width;
+            _height = height;
+            _rectsCount = rectsCount;
+            _nativeRects = nativeRects;
         }
 
         public int getIndex() {
@@ -79,12 +64,12 @@ public class SVGPacker {
             return _height;
         }
 
-        public int getNativeRectsCount() {
+        public int getRectsCount() {
 
-            return _nativeRectCount;
+            return _rectsCount;
         }
 
-        java.nio.ByteBuffer getNativeRects() {
+        public java.nio.ByteBuffer getNativeRects() {
 
             return _nativeRects.asReadOnlyBuffer();
         }
@@ -92,39 +77,12 @@ public class SVGPacker {
         private int _index;
         private int _width;
         private int _height;
-        private int _nativeRectCount;
+        private int _rectsCount;
         private java.nio.ByteBuffer _nativeRects;
     }
 
-    class SVGPackerResult {
-
-        private SVGPackerResult() {
-
-            build();
-        }
-
-        private void build() {
-
-            int pagesCount = AmanithSVG.svgtPackingBinsCount();
-
-            if (pagesCount > 0) {
-                _pages = new SVGPackerPage[pagesCount];
-                for (int i = 0; i < pagesCount; ++i) {
-                    _pages[i] = new SVGPackerPage(i);
-                }
-            }
-        }
-
-        SVGPackerPage[] getPages() {
-
-            return _pages;
-        }
-
-        private SVGPackerPage[] _pages = null;
-    }
-
     // Constructor.
-    SVGPacker(float scale, int maxTexturesDimension, int border, boolean pow2Textures) {
+    public SVGPacker(float scale, int maxTexturesDimension, int border, boolean pow2Textures) {
 
         if (scale <= 0) {
             throw new IllegalArgumentException("scale <= 0");
@@ -143,7 +101,15 @@ public class SVGPacker {
         _packing = false;
     }
 
-    SVGTError begin() {
+    /*!
+        Start a packing task: one or more SVG documents will be collected and packed into bins, for the generation of atlases.
+
+        Every collected SVG document/element will be packed into rectangular bins, whose dimensions won't exceed the specified 'maxTexturesDimension' (see constructor), in pixels.
+        If true, 'pow2Textures' (see constructor) will force bins to have power-of-two dimensions.
+        Each rectangle will be separated from the others by the specified 'border' (see constructor), in pixels.
+        The specified 'scale' (see constructor) factor will be applied to all collected SVG documents/elements, in order to realize resolution-independent atlases.
+    */
+    public SVGTError begin() {
 
         if (_packing) {
             return SVGTError.StillPacking;
@@ -158,7 +124,17 @@ public class SVGPacker {
         }
     }
 
-    SVGTError add(SVGDocument document, boolean explodeGroup, float scale, int[] info) {
+    /*!
+        Add an SVG document to the current packing task.
+
+        If true, 'explodeGroups' tells the packer to not pack the whole SVG document, but instead to pack each first-level element separately.
+        The additional 'scale' is used to adjust the document content to the other documents involved in the current packing process.
+
+        The 'info' parameter will return some useful information, it must be an array of (at least) 2 entries and it will be filled with:
+        - info[0] = number of collected bounding boxes
+        - info[1] = the actual number of packed bounding boxes (boxes whose dimensions exceed the 'maxTexturesDimension' value specified through the constructor, will be discarded)
+    */
+    public SVGTError add(SVGDocument document, boolean explodeGroup, float scale, int[] info) {
 
         if (document == null) {
             throw new IllegalArgumentException("document == null");
@@ -182,7 +158,13 @@ public class SVGPacker {
         }
     }
 
-    SVGPackerResult end(boolean performPacking) {
+    /*!
+        Close the current packing task and, if specified, perform the real packing algorithm.
+
+        All collected SVG documents/elements (actually their bounding boxes) are packed into bins for later use (i.e. atlases generation).
+        After calling this function, the application could use the SVGSurface.Draw method in order to draw the returned packed elements.
+    */
+    public SVGPackedBin[] end(boolean performPacking) {
 
         SVGTError err;
 
@@ -195,10 +177,30 @@ public class SVGPacker {
             return null;
         }
         // if requested, close the packing process without doing anything
-        if (!performPacking)
+        if (!performPacking) {
             return null;
+        }
+        else {
+            // get number of generated bins
+            int binsCount = AmanithSVG.svgtPackingBinsCount();
+            if (binsCount <= 0) {
+                return null;
+            }
+            else {
+                // allocate space for bins
+                SVGPackedBin[] bins = new SVGPackedBin[binsCount];
+                // allocate space to store information of a single bin
+                int[] binInfo = new int[3];
 
-        return new SVGPackerResult();
+                for (int i = 0; i < binsCount; ++i) {
+                    // get information relative to the surface/page
+                    AmanithSVG.svgtPackingBinInfo(i, binInfo);
+                    bins[i] = new SVGPackedBin(i, binInfo[0], binInfo[1], binInfo[2], AmanithSVG.svgtPackingBinRects(i));
+                }
+
+                return bins;
+            }
+        }
     }
 
     private float _scale;

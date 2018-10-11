@@ -38,9 +38,14 @@ package com.mazatech.gdx;
 // libGDX
 import com.badlogic.gdx.utils.Disposable;
 
+// AmanithSVG
+import com.mazatech.svgt.SVGTRenderingQuality;
+import com.mazatech.svgt.SVGColor;
+import com.mazatech.svgt.SVGPacker;
+
 public class SVGTextureAtlas implements Disposable {
 
-    SVGTextureAtlas(SVGPacker.SVGPackerResult packerResult, boolean dilateEdgesFix, SVGColor clearColor) {
+    SVGTextureAtlas(SVGPacker.SVGPackedBin[] packerResult, boolean dilateEdgesFix, SVGColor clearColor) {
 
         if (packerResult == null) {
             throw new IllegalArgumentException("packerResult == null");
@@ -52,14 +57,13 @@ public class SVGTextureAtlas implements Disposable {
         build(packerResult, dilateEdgesFix, clearColor);
     }
 
-    private void build(SVGPacker.SVGPackerResult packerResult, boolean dilateEdgesFix, SVGColor clearColor) {
+    private void build(SVGPacker.SVGPackedBin[] packerResult, boolean dilateEdgesFix, SVGColor clearColor) {
 
-        SVGPacker.SVGPackerPage[] packerPages = packerResult.getPages();
-        int pagesCount = packerPages.length;
+        int pagesCount = packerResult.length;
 
         _pages = new SVGTextureAtlasPage[pagesCount];
         for (int i = 0; i < pagesCount; ++i) {
-            _pages[i] = new SVGTextureAtlasPage(packerPages[i], dilateEdgesFix, clearColor);
+            _pages[i] = new SVGTextureAtlasPage(packerResult[i], dilateEdgesFix, clearColor);
         }
     }
 

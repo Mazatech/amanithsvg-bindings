@@ -47,6 +47,10 @@ import com.badlogic.gdx.utils.Disposable;
 
 // AmanithSVG
 import com.mazatech.svgt.SVGTError;
+import com.mazatech.svgt.SVGAssets;
+import com.mazatech.svgt.SVGColor;
+import com.mazatech.svgt.SVGDocument;
+import com.mazatech.svgt.SVGPacker;
 
 public class SVGTextureAtlasGenerator implements Disposable {
 
@@ -238,17 +242,17 @@ public class SVGTextureAtlasGenerator implements Disposable {
             SVGDocument doc = entry.getValue();
             // if not yet loaded, create it
             if (doc == null) {
-                doc = new SVGDocument(entry.getKey());
+                doc = SVGAssets.createDocument(entry.getKey());
                 entry.setValue(doc);
             }
         }
     }
 
-    private SVGPacker.SVGPackerResult performPacking() throws SVGTextureAtlasPackingException {
+    private SVGPacker.SVGPackedBin[] performPacking() throws SVGTextureAtlasPackingException {
 
         SVGTError err;
         int[] info = new int[2];
-        SVGPacker packer = new SVGPacker(_scale, _maxTexturesDimension, _border, _pow2Textures);
+        SVGPacker packer = SVGAssets.createPacker(_scale, _maxTexturesDimension, _border, _pow2Textures);
 
         // start a new packing process
         if ((err = packer.begin()) != SVGTError.None) {
@@ -281,7 +285,7 @@ public class SVGTextureAtlasGenerator implements Disposable {
     // NB: this method MUST be called from the OpenGL thread, because it creates textures
     public SVGTextureAtlas generateAtlas() throws SVGTextureAtlasPackingException {
 
-        SVGPacker.SVGPackerResult packerResult;
+        SVGPacker.SVGPackedBin[] packerResult;
 
         // ensure that SVG documents are loaded
         loadDocuments();

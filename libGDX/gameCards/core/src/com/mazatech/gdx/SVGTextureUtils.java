@@ -40,6 +40,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.utils.BufferUtils;
 
+// AmanithSVG
+import com.mazatech.svgt.SVGSurface;
+
 public final class SVGTextureUtils {
 
     public static int getGlMaxTextureDimension() {

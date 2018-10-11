@@ -34,17 +34,12 @@
 ** 
 ****************************************************************************/
 
-package com.mazatech.gdx;
+package com.mazatech.svgt;
 
 public class SVGScaler {
 
     // Constructor.
-    public SVGScaler(int referenceWidth, int referenceHeight, final SVGScalerMatchMode matchMode, float match, float offsetScale) {
-
-        set(referenceWidth, referenceHeight, matchMode, match, offsetScale);
-    }
-
-    private void set(int referenceWidth, int referenceHeight, final SVGScalerMatchMode matchMode, float match, float offsetScale) {
+    public SVGScaler(float referenceWidth, float referenceHeight, SVGScalerMatchMode matchMode, float match, float offsetScale) {
 
         _referenceWidth = referenceWidth;
         _referenceHeight = referenceHeight;
@@ -53,7 +48,7 @@ public class SVGScaler {
         _offsetScale = offsetScale;
     }
 
-    public void setReferenceResolution(int referenceWidth, int referenceHeight) {
+    public void setReferenceResolution(float referenceWidth, float referenceHeight) {
 
         _referenceWidth = referenceWidth;
         _referenceHeight = referenceHeight;   
@@ -114,9 +109,9 @@ public class SVGScaler {
                 float logWidth = (float)(Math.log(currentWidth / _referenceWidth) / Math.log(2));
                 float logHeight = (float)(Math.log(currentHeight / _referenceHeight) / Math.log(2));
                 // clamp between 0 and 1
-                float t = Math.max(0, Math.min(1, _match));
+                float t = Math.max(0, Math.min(1.0f, _match));
                 // lerp
-                float logWeightedAverage = ((1 - t) * logWidth) + (t * logHeight);
+                float logWeightedAverage = ((1.0f - t) * logWidth) + (t * logHeight);
                 scale = (float)Math.pow(2, logWeightedAverage);
                 break;
             }
@@ -129,8 +124,8 @@ public class SVGScaler {
         return (scale * _offsetScale);
     }
 
-    private int _referenceWidth;
-    private int _referenceHeight;
+    private float _referenceWidth;
+    private float _referenceHeight;
     private SVGScalerMatchMode _matchMode;
     private float _match;
     private float _offsetScale;

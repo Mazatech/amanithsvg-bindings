@@ -290,7 +290,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
         Gdx.gl.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
         // initialize AmanithSVG
-        SVGManager.init();
+        SVGAssets.init();
 
         // the scaler will calculate the correct scaling factor, actual parameters say:
         // "We have created all the SVG files (that we are going to pack in atlas) so that, at 1536 x 2048 (the 'reference resolution'), they
@@ -305,10 +305,10 @@ public class Game extends ApplicationAdapter implements InputProcessor {
         _atlasGen.add(Gdx.files.internal("animals.svg"), true, 0.65f);
 
         // create backgrounds documents
-        _backgroundDocs[0] = new SVGDocument(Gdx.files.internal("gameBkg1.svg"));
-        _backgroundDocs[1] = new SVGDocument(Gdx.files.internal("gameBkg2.svg"));
-        _backgroundDocs[2] = new SVGDocument(Gdx.files.internal("gameBkg3.svg"));
-        _backgroundDocs[3] = new SVGDocument(Gdx.files.internal("gameBkg4.svg"));
+        _backgroundDocs[0] = SVGAssets.createDocument(Gdx.files.internal("gameBkg1.svg"));
+        _backgroundDocs[1] = SVGAssets.createDocument(Gdx.files.internal("gameBkg2.svg"));
+        _backgroundDocs[2] = SVGAssets.createDocument(Gdx.files.internal("gameBkg3.svg"));
+        _backgroundDocs[3] = SVGAssets.createDocument(Gdx.files.internal("gameBkg4.svg"));
         for (int i = 0; i < 4; ++i) {
             // backgrounds viewBox must cover the whole drawing surface, so we use SVGTMeetOrSlice.Slice (default is SVGTMeetOrSlice.Meet)
             _backgroundDocs[i].setAspectRatio(new SVGAlignment(SVGTAlign.XMidYMid, SVGTMeetOrSlice.Slice));
@@ -399,7 +399,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
         _backgroundTexture.dispose();
         _atlas.dispose();
         _atlasGen.dispose();
-        SVGManager.dispose();
+        SVGAssets.dispose();
     }
 
     @Override

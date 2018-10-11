@@ -34,7 +34,7 @@
 ** 
 ****************************************************************************/
 
-package com.mazatech.gdx;
+package com.mazatech.svgt;
 
 public class SVGColor {
 
@@ -185,7 +185,6 @@ public class SVGColor {
     public static final SVGColor Whitesmoke = new SVGColor(0.961f, 0.961f, 0.961f);
     public static final SVGColor Yellow = new SVGColor(1.000f, 1.000f, 0.000f);
     public static final SVGColor Yellowgreen = new SVGColor(0.604f, 0.804f, 0.196f);
-
     public static final SVGColor Clear = new SVGColor(0.0f, 0.0f, 0.0f, 0.0f);
 
     // Constructor.

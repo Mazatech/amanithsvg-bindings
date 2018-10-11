@@ -34,7 +34,7 @@
 ** 
 ****************************************************************************/
 
-package com.mazatech.gdx;
+package com.mazatech.svgt;
 
 /*
     SVG viewport.

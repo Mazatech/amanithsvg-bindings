@@ -51,13 +51,17 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.mazatech.svgt.SVGTError;
 import com.mazatech.svgt.SVGTHandle;
 import com.mazatech.svgt.SVGTRenderingQuality;
+import com.mazatech.svgt.SVGAssets;
 import com.mazatech.svgt.AmanithSVG;
+import com.mazatech.svgt.SVGColor;
+import com.mazatech.svgt.SVGSurface;
+import com.mazatech.svgt.SVGPacker;
 
 public class SVGTextureAtlasPage extends Texture {
 
     private static class SVGTextureAtlasPageData implements TextureData, Disposable {
 
-        private SVGTextureAtlasPageData(SVGPacker.SVGPackerPage packerPage, boolean dilateEdgesFix, SVGColor clearColor) {
+        private SVGTextureAtlasPageData(SVGPacker.SVGPackedBin packerPage, boolean dilateEdgesFix, SVGColor clearColor) {
 
             if (packerPage == null) {
                 throw new IllegalArgumentException("packerPage == null");
@@ -70,7 +74,7 @@ public class SVGTextureAtlasPage extends Texture {
             _width = packerPage.getWidth();
             _height = packerPage.getHeight();
             // copy the native rectangles
-            _nativeRectsCount = packerPage.getNativeRectsCount();
+            _nativeRectsCount = packerPage.getRectsCount();
             _nativeRectsCopy = java.nio.ByteBuffer.allocateDirect(nativeRects.capacity());
             _nativeRectsCopy.put(nativeRects);
             _clearColor = clearColor;
@@ -128,7 +132,7 @@ public class SVGTextureAtlasPage extends Texture {
             }
             else {
                 // create the SVG drawing surface
-                SVGSurface surface = new SVGSurface(_width, _height);
+                SVGSurface surface = SVGAssets.createSurface(_width, _height);
 
                 if (surface != null) {
                     // draw packed rectangles/elements
@@ -199,7 +203,7 @@ public class SVGTextureAtlasPage extends Texture {
         private boolean _isPrepared = false;
     }
 
-    SVGTextureAtlasPage(SVGPacker.SVGPackerPage packerPage, boolean dilateEdgesFix, SVGColor clearColor) {
+    SVGTextureAtlasPage(SVGPacker.SVGPackedBin packerPage, boolean dilateEdgesFix, SVGColor clearColor) {
 
         this(new SVGTextureAtlasPageData(packerPage, dilateEdgesFix, clearColor));
     }
