@@ -104,7 +104,7 @@ public class SVGDocument {
     /*
         SVG content itself optionally can provide information about the appropriate viewport region for
         the content via the 'width' and 'height' XML attributes on the outermost <svg> element.
-        Use this property to get the suggested viewport width, in pixels.
+        Use this method to get the suggested viewport width, in pixels.
 
         It returns -1 (i.e. an invalid width) in the following cases:
         - the library has not previously been initialized through the svgtInit function
@@ -120,7 +120,7 @@ public class SVGDocument {
     /*
         SVG content itself optionally can provide information about the appropriate viewport region for
         the content via the 'width' and 'height' XML attributes on the outermost <svg> element.
-        Use this property to get the suggested viewport height, in pixels.
+        Use this method to get the suggested viewport height, in pixels.
 
         It returns -1 (i.e. an invalid height) in the following cases:
         - the library has not previously been initialized through the svgtInit function

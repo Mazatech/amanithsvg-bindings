@@ -218,24 +218,30 @@ public final class SVGAssets {
         AmanithSVG.svgtDone();
     }
 
-    // NB: you MUST implement this functionality according to the underlying graphics system; this implementation is for libGDX
+    // NB: you MUST implement this functionality according to the underlying graphics system; this implementation is for libGDX backend only
     public static int getScreenResolutionWidth() {
 
         return Gdx.graphics.getBackBufferWidth();
     }
 
-    // NB: you MUST implement this functionality according to the underlying graphics system; this implementation is for libGDX
+    // NB: you MUST implement this functionality according to the underlying graphics system; this implementation is for libGDX backend only
     public static int getScreenResolutionHeight() {
 
         return Gdx.graphics.getBackBufferHeight();
     }
 
-    // NB: you MUST implement this functionality according to the underlying graphics system; this implementation is for libGDX
+    // NB: you MUST implement this functionality according to the underlying graphics system; this implementation is for libGDX backend only
     public static float getScreenDpi() {
 
         return Gdx.graphics.getPpiX();
     }
 
+    /*
+        Initialize the AmanithSVG library as well as the JNI wrapper mechanism.
+        
+        NB: before using any other method of this class (e.g. createSurface, createDocument, createPacker), it
+        is MANDATORY to call this funtion as a first thing to do.
+    */
     public static void init() {
 
         if (!_isInitialized) {
@@ -254,6 +260,7 @@ public final class SVGAssets {
         }
     }
 
+    // Create a drawing surface, specifying its dimensions in pixels.
     public static SVGSurface createSurface(int width, int height) {
 
         SVGSurface result = null;
@@ -278,6 +285,7 @@ public final class SVGAssets {
         return result;
     }
 
+    // Create and load an SVG document, specifying the whole xml string.
     public static SVGDocument createDocument(String xmlText) {
 
         SVGDocument result = null;
@@ -303,6 +311,7 @@ public final class SVGAssets {
         return result;
     }
 
+    // Create and load an SVG document, specifying a file handle; NB: this method is libGDX specific.
     public static SVGDocument createDocument(FileHandle file) {
 
         SVGDocument result = null;
