@@ -94,14 +94,14 @@ public class SVGTextureAtlasRegion extends TextureRegion {
 
     // 'id' attribute, empty if not present.
     private String _elemName = null;
-    // Original rectangle corner.
+    // Original rectangle corner (i.e. the position within the original SVG).
     private int _originalX = 0;
     private int _originalY = 0;
-    // Rectangle corner position.
+    // Rectangle corner position (i.e. the position within the texture).
     private int _x = 0;
     private int _y = 0;
     // SVG document handle.
     private SVGTHandle _docHandle = null;
-    // Z-order.
+    // Z-order (i.e. the rendering order of the element, as induced by the SVG tree).
     private int _zOrder = 0;
 }

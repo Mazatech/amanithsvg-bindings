@@ -67,6 +67,7 @@ public class SVGTextureAtlas implements Disposable {
         }
     }
 
+    /* get the generated textures */
     public SVGTextureAtlasPage[] getPages() {
 
         return _pages;

@@ -205,6 +205,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
                                         if (gameFinished()) {
                                             // start a new game: shuffle the cards deck and change the background
                                             startNewGame();
+                                            // we postpone the background texture creation at the next render() call
                                             _backgroundRegenerate = true;
                                         }
                                     }
@@ -295,13 +296,13 @@ public class Game extends ApplicationAdapter implements InputProcessor {
         // the scaler will calculate the correct scaling factor, actual parameters say:
         // "We have created all the SVG files (that we are going to pack in atlas) so that, at 1536 x 2048 (the 'reference resolution'), they
         // do not need additional scaling (the last passed parameter value 1.0f is the basic scale relative to the 'reference resolution').
-        // If the device has a different screen resolution, we want to scale SVG contents depending on the actual width and height (MatchWidthOrHeight), equally important (0.5f)""
+        // If the device has a different screen resolution, we want to scale SVG contents depending on the actual width and height (MatchWidthOrHeight), equally important (0.5f)"
         _scaler = new SVGScaler(1536, 2048, SVGScalerMatchMode.MatchWidthOrHeight, 0.5f, 1.0f);
         // scale, maxTexturesDimension (take care of OpenGL and AmanithSVG limitations), border, pow2Textures, dilateEdgesFix, clearColor
         _atlasGen = new SVGTextureAtlasGenerator(1.0f, Math.min(SVGTextureUtils.getGlMaxTextureDimension(), AmanithSVG.svgtSurfaceMaxDimension()), 1, false, false, SVGColor.Clear);
         // SVG file, explodeGroups, scale
         // NB: because 'animals.svg' has been designed for a 3072 x 2560 resolution (see the file header), we want to adjust the relative scaling by a 0.65 factor (so
-        // that is congruent with the 1536 x 2048 'reference resolution')
+        // that it's congruent with the 1536 x 2048 'reference resolution')
         _atlasGen.add(Gdx.files.internal("animals.svg"), true, 0.65f);
 
         // create backgrounds documents
@@ -342,6 +343,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
         
         if ((width > 0) && (height > 0)) {
 
+            // update OpenGL viewport
             Gdx.gl.glViewport(0, 0, width, height);
 
             // update current projection matrix
@@ -370,6 +372,8 @@ public class Game extends ApplicationAdapter implements InputProcessor {
         _batch.setProjectionMatrix(_camera.combined);
 
         // if we have completed the current game, we have to generate the new background texture
+        // NB: we use this global flag because we cannot generate the background within the selectCard()
+        // function. Textures MUST be generated from the OpenGL thread.
         if (_backgroundRegenerate) {
             _backgroundRegenerate = false;
             // generate background
@@ -395,6 +399,9 @@ public class Game extends ApplicationAdapter implements InputProcessor {
     @Override
     public void dispose() {
 
+        for (int i = 0; i < 4; ++i) {
+            _backgroundDocs[i].dispose();
+        }
         _batch.dispose();
         _backgroundTexture.dispose();
         _atlas.dispose();

@@ -263,6 +263,7 @@ public class SVGTextureAtlasPage extends Texture {
         }
     }
 
+    /* returns all regions in the texture */
     public SVGTextureAtlasRegion[] getRegions() {
 
         return _regions;

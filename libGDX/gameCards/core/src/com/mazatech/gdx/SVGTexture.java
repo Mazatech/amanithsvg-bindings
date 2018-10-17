@@ -297,30 +297,19 @@ public class SVGTexture extends Texture {
 
         private SVGTextureDataFromSurface(SVGSurface surface) {
 
-            this(surface, SVGColor.Clear, false);
+            this(surface, false);
         }
 
         private SVGTextureDataFromSurface(SVGSurface surface,
-                                          SVGColor clearColor) {
-
-            this(surface, clearColor, false);
-        }
-
-        private SVGTextureDataFromSurface(SVGSurface surface,
-                                          SVGColor clearColor,
                                           boolean dilateEdgesFix) {
 
             if (surface == null) {
                 throw new IllegalArgumentException("surface is null or empty");
             }
-            if (clearColor == null) {
-                throw new IllegalArgumentException("clearColor is null");
-            }
 
             _surface = surface;
             _width = surface.getWidth();
             _height = surface.getHeight();
-            _clearColor = clearColor;
             _dilateEdgesFix = dilateEdgesFix;
             _isPrepared = true;
         }
@@ -410,17 +399,31 @@ public class SVGTexture extends Texture {
         private SVGSurface _surface = null;
         private int _width = 0;
         private int _height = 0;
-        private SVGColor _clearColor = SVGColor.Clear;
         private boolean _dilateEdgesFix = false;
         private boolean _isPrepared = false;
     }
 
-    // Create a texture out of an SVG file
+    /*
+        Generate a texture from the given "internal" SVG filename.
+
+        With the term "internal", it's intended those read-only files located on the internal storage.
+        For more details about libGDX file handling, please refer to the official documentation (http://github.com/libgdx/libgdx/wiki/File-handling)
+
+        Size of the texture is derived from the information available within the SVG file:
+
+        - if the outermost <svg> element has 'width' and 'height' attributes, such values are used to size the texture
+        - if the outermost <svg> element does not have 'width' and 'height' attributes, the size of texture is determined by the width and height values of the 'viewBox' attribute
+    */
     public SVGTexture(String internalPath) {
 
         this(Gdx.files.internal(internalPath));
     }
 
+    /*
+        Generate a texture from the given "internal" SVG filename.
+        Size of texture is specified by the given 'width' and 'height'.
+        Before the SVG rendering, pixels are initialized with a transparent black.
+    */
     public SVGTexture(String internalPath,
                       int width,
                       int height) {
@@ -428,6 +431,11 @@ public class SVGTexture extends Texture {
         this(Gdx.files.internal(internalPath), width, height);
     }
 
+    /*
+        Generate a texture from the given "internal" SVG filename.
+        Size of texture is specified by the given 'width' and 'height'.
+        Before the SVG rendering, pixels are initialized with the given 'clearColor'.
+    */
     public SVGTexture(String internalPath,
                       int width,
                       int height,
@@ -436,6 +444,20 @@ public class SVGTexture extends Texture {
         this(Gdx.files.internal(internalPath), width, height, clearColor);
     }
 
+    /*
+        Generate a texture from the given "internal" SVG filename.
+        Size of texture is specified by the given 'width' and 'height'.
+        Before the SVG rendering, pixels are initialized with the given 'clearColor'.
+
+        If the 'dilateEdgesFix' flag is set to true, the rendering process will also
+        perform a 1-pixel dilate post-filter; this dilate filter is useful when the
+        texture has some transparent parts (i.e. pixels with alpha component = 0): such
+        flag will induce TextureFilter.Linear minification/magnification filtering.
+
+        If the 'dilateEdgesFix' flag is set to false, no additional dilate post-filter
+        is applied, and the texture minification/magnification filtering is set to
+        TextureFilter.Nearest.
+    */
     public SVGTexture(String internalPath,
                       int width,
                       int height,
@@ -507,16 +529,9 @@ public class SVGTexture extends Texture {
     }
 
     public SVGTexture(SVGSurface surface,
-                      SVGColor clearColor) {
-
-        this(new SVGTextureDataFromSurface(surface, clearColor));
-    }
-
-    public SVGTexture(SVGSurface surface,
-                      SVGColor clearColor,
                       boolean dilateEdgesFix) {
 
-        this(new SVGTextureDataFromSurface(surface, clearColor, dilateEdgesFix));
+        this(new SVGTextureDataFromSurface(surface, dilateEdgesFix));
     }
 
     public SVGTexture(SVGTextureDataFromSurface data) {
