@@ -80,6 +80,28 @@ public enum CardType {
         return _allValues[internalEnum];
     }
 
+    // Number of total animal types
+    public static int count() {
+
+        return (CardType.Fox.getValue() - CardType.Panda.getValue()) + 1;
+    }
+
+    // Select a random animal
+    public static CardType random() {
+
+        int v = (int)(Math.random() * (float)CardType.count()) + CardType.Panda.getValue();
+        return fromValue(v);
+    }
+
+    // Get the next animal in the list
+    public CardType next() {
+
+        int current = this.getValue();
+        int next = ((current + 1) % CardType.count()) + CardType.Panda.getValue();
+        return CardType.fromValue(next);
+    }
+
+    // Map an animal name to the respective enum value (e.g. "puma" -> Puma)
     public static CardType fromName(final String name) {
 
         CardType result;

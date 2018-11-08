@@ -108,10 +108,10 @@ public class Game extends ApplicationAdapter implements InputProcessor {
                 Gdx.app.log("CardsGame", "Specified maximum texture dimensions (in conjunction with specified scale factor), do not allow the packing of all SVG elements");
             }
 
-            // empty the previous list
+            // empty the previous map
             _animalsSprites.clear();
 
-            // now associate at each animal type the respective texture region
+            // now associate to each animal type the respective texture region
             for (SVGTextureAtlasPage page : _atlas.getPages()) {
                 for (SVGTextureAtlasRegion region : page.getRegions()) {
                     _animalsSprites.put(CardType.fromName(region.getElemName()), region);
@@ -243,18 +243,19 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 
     private void startNewGame() {
 
-        Random rnd = new Random();
-        int animalTypesCount = (CardType.Fox.getValue() - CardType.Panda.getValue()) + 1;
-        int currentAnimal = (int)(Math.random() * (float)animalTypesCount) + CardType.Panda.getValue();
         CardType[] animalCouples = new CardType[_cards.length];
+        // start with a random animal
+        CardType currentAnimal = CardType.random();
 
         // generate animal couples
         for (int i = 0; i < (animalCouples.length / 2); ++i) {
-            animalCouples[i * 2] = animalCouples[(i * 2) + 1] = CardType.fromValue((currentAnimal % animalTypesCount) + CardType.Panda.getValue());
-            currentAnimal++;
+            animalCouples[i * 2] = currentAnimal;
+            animalCouples[(i * 2) + 1] = currentAnimal;
+            currentAnimal = currentAnimal.next();
         }
 
         // shuffle couples
+        Random rnd = new Random();
         int n = animalCouples.length;
         // Knuth shuffle
         while (n > 1) {
@@ -294,16 +295,17 @@ public class Game extends ApplicationAdapter implements InputProcessor {
         SVGAssets.init();
 
         // the scaler will calculate the correct scaling factor, actual parameters say:
-        // "We have created all the SVG files (that we are going to pack in atlas) so that, at 1536 x 2048 (the 'reference resolution'), they
+        // "We have created all the SVG files (that we are going to pack in atlas) so that, at 768 x 640 (the 'reference resolution'), they
         // do not need additional scaling (the last passed parameter value 1.0f is the basic scale relative to the 'reference resolution').
         // If the device has a different screen resolution, we want to scale SVG contents depending on the actual width and height (MatchWidthOrHeight), equally important (0.5f)"
-        _scaler = new SVGScaler(1536, 2048, SVGScalerMatchMode.MatchWidthOrHeight, 0.5f, 1.0f);
+        _scaler = new SVGScaler(768, 640, SVGScalerMatchMode.MatchWidthOrHeight, 0.5f, 1.0f);
         // scale, maxTexturesDimension (take care of OpenGL and AmanithSVG limitations), border, pow2Textures, dilateEdgesFix, clearColor
         _atlasGen = new SVGTextureAtlasGenerator(1.0f, Math.min(SVGTextureUtils.getGlMaxTextureDimension(), AmanithSVG.svgtSurfaceMaxDimension()), 1, false, false, SVGColor.Clear);
         // SVG file, explodeGroups, scale
-        // NB: because 'animals.svg' has been designed for a 3072 x 2560 resolution (see the file header), we want to adjust the relative scaling by a 0.65 factor (so
-        // that it's congruent with the 1536 x 2048 'reference resolution')
-        _atlasGen.add(Gdx.files.internal("animals.svg"), true, 0.65f);
+        // NB: because 'animals.svg' has been designed for a 768 x 640 resolution (see the file header), we do not want to adjust the scale further (i.e. we pass 1.0f as additional scale factor)
+        // Note that at the 768 x 640 'reference resolution', each animal sprite will have a dimension of 128 x 128: it will ALWAYS guarantee that we can easily place them on a 4 x 3 grid (landscape layout) or
+        // on a 3 x 4 grid (portrait layout), REGARDLESS OF SCREEN RESOLUTION
+        _atlasGen.add(Gdx.files.internal("animals.svg"), true, 1.0f);
 
         // create backgrounds documents
         _backgroundDocs[0] = SVGAssets.createDocument(Gdx.files.internal("gameBkg1.svg"));

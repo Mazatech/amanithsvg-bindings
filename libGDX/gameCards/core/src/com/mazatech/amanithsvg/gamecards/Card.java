@@ -48,11 +48,16 @@ public class Card {
         y = 0;
     }
 
+    // true if card is active (i.e. still part of the current game), else false
     public boolean active;
+    // true if card is back side, false if the card is turned (i.e. we can see the animal character)
     public boolean backSide;
+    // the animal character associated with this card
     public CardType animalType;
+    // card position within the screen, in pixels
     public float x;
     public float y;
+    // card dimensions, in pixels
     public float width;
     public float height;
 }
