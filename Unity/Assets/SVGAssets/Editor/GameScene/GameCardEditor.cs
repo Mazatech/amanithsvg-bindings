@@ -45,8 +45,7 @@ public class GameCardEditor : Editor
         bool needSpriteUpdate = false;
         bool active = EditorGUILayout.Toggle(new GUIContent("Active", ""), card.Active);
         bool backSide = EditorGUILayout.Toggle(new GUIContent("Back side", ""), card.BackSide);
-        CardType animalType = (CardType)EditorGUILayout.EnumPopup("Animal type", card.AnimalType);
-        int index = EditorGUILayout.IntField("Index in deck", card.Index);
+        GameCardType animalType = (GameCardType)EditorGUILayout.EnumPopup("Animal type", card.AnimalType);
         GameBehaviour game = EditorGUILayout.ObjectField("Game manager", card.Game, typeof(GameBehaviour), true) as GameBehaviour;
 
         // update active flag, if needed
@@ -79,12 +78,6 @@ public class GameCardEditor : Editor
             card.AnimalType = animalType;
             SVGUtils.MarkSceneDirty();
             needSpriteUpdate = true;
-        }
-        // update index in deck, if needed
-        if (index != card.Index)
-        {
-            card.Index = index;
-            SVGUtils.MarkSceneDirty();
         }
         // update game manager, if needed
         if (game != card.Game)

@@ -52,7 +52,9 @@ public class SVGSpriteLoaderEditor : Editor {
             // set the selected sprite into the renderer
             SpriteRenderer renderer = this.m_EditedLoader.GetComponent<SpriteRenderer>();
             if (renderer != null)
+            {
                 renderer.sprite = spriteAsset.SpriteData.Sprite;
+            }
         }
     }
 
@@ -65,13 +67,15 @@ public class SVGSpriteLoaderEditor : Editor {
 
             SpriteRenderer renderer = this.m_EditedLoader.GetComponent<SpriteRenderer>();
             if (renderer != null)
+            {
                 renderer.sprite = null;
+            }
         }
     }
 
     private void DrawInspector()
     {
-        bool resizeOnStart = EditorGUILayout.Toggle("Resize on Start", this.m_EditedLoader.ResizeOnStart);
+        bool resizeOnStart = EditorGUILayout.Toggle("Resize on Start()", this.m_EditedLoader.ResizeOnStart);
         bool updateTransform = EditorGUILayout.Toggle("Update transform", this.m_EditedLoader.UpdateTransform);
 
         string atlasName = (this.m_EditedLoader.Atlas != null) ? this.m_EditedLoader.Atlas.name : "<select>";
@@ -79,10 +83,11 @@ public class SVGSpriteLoaderEditor : Editor {
         {
             EditorGUILayout.PrefixLabel("Atlas");
             if (GUILayout.Button(atlasName, "DropDown"))
+            {
                 SVGAtlasSelector.Show("", this.OnAtlasSelect);
+            }
         }
         EditorGUILayout.EndHorizontal();
-
 
         if (this.m_EditedLoader.Atlas != null && this.m_EditedLoader.SpriteReference != null)
         {
@@ -93,7 +98,9 @@ public class SVGSpriteLoaderEditor : Editor {
             {
                 EditorGUILayout.PrefixLabel("Sprite");
                 if (GUILayout.Button(buttonText, "DropDown"))
+                {
                     SVGSpriteSelector.Show(this.m_EditedLoader.Atlas, "", this.OnSpriteSelect);
+                }
             }
             EditorGUILayout.EndHorizontal();
         }
@@ -125,13 +132,6 @@ public class SVGSpriteLoaderEditor : Editor {
 
     void OnDestroy()
     {
-        /*
-        // avoid to leak textures
-        this.DestroyCustomStyles();
-        this.m_CustomStylesGenerated = false;
-        */
-
-        //this.m_EditedLoader = null;
     }
 
     [NonSerialized]

@@ -71,7 +71,9 @@ public class SVGPivotEditor : EditorWindow
         get
         {
             if (SVGPivotEditor.m_ContrastTexture == null)
+            {
                 SVGPivotEditor.m_ContrastTexture = SVGPivotEditor.CreateContrastTexture();
+            }
             return SVGPivotEditor.m_ContrastTexture;
         }
     }
@@ -120,7 +122,9 @@ public class SVGPivotEditor : EditorWindow
         get
         {
             if (SVGPivotEditor.m_PivotTexture == null)
+            {
                 SVGPivotEditor.CreatePivotTexture();
+            }
             return SVGPivotEditor.m_PivotTexture;
         }
     }
@@ -138,14 +142,18 @@ public class SVGPivotEditor : EditorWindow
     private void Cancel()
     {
         if (this.m_Callback != null)
-            this.m_Callback (PivotEditingResult.Cancel, this.m_SpriteAsset, new Vector2(this.m_Pivot.x, 1 - this.m_Pivot.y), this.m_Border);
+        {
+            this.m_Callback (PivotEditingResult.Cancel, this.m_SpriteAsset, new Vector2(this.m_Pivot.x, this.m_Pivot.y), this.m_Border);
+        }
         Close();
     }
     
     private void Ok()
     {
         if (this.m_Callback != null)
-            this.m_Callback(PivotEditingResult.Ok, this.m_SpriteAsset, new Vector2(this.m_Pivot.x, 1 - this.m_Pivot.y), this.m_Border);
+        {
+            this.m_Callback(PivotEditingResult.Ok, this.m_SpriteAsset, new Vector2(this.m_Pivot.x, this.m_Pivot.y), this.m_Border);
+        }
         Close();
     }
 
@@ -178,7 +186,9 @@ public class SVGPivotEditor : EditorWindow
         }
 
         if (drawArea.height > outerRect.height)
+        {
             outerRect.y += (drawArea.height - outerRect.height) * 0.5f;
+        }
         else
         if (outerRect.height > drawArea.height)
         {
@@ -188,7 +198,9 @@ public class SVGPivotEditor : EditorWindow
         }
 
         if (drawArea.width > outerRect.width)
+        {
             outerRect.x += (drawArea.width - outerRect.width) * 0.5f;
+        }
 
         // Draw the background
         EditorGUI.DrawTextureTransparent(outerRect, null, ScaleMode.ScaleToFit, outer.width / outer.height);
@@ -276,7 +288,9 @@ public class SVGPivotEditor : EditorWindow
             float inputFloat;
             bool valid = float.TryParse(input, out inputFloat);
             if (valid)
+            {
                 value = inputFloat;
+            }
         }
 
         return value;
@@ -298,9 +312,6 @@ public class SVGPivotEditor : EditorWindow
             if (this.m_SpriteAsset != null)
             {
                 Sprite sprite = this.m_SpriteAsset.SpriteData.Sprite;
-                //Texture2D texture = sprite.texture;
-                //Rect spriteRect = sprite.textureRect;
-                //Rect uvRect = new Rect(spriteRect.x / texture.width, spriteRect.y / texture.height, spriteRect.width / texture.width, spriteRect.height / texture.height);
                 float spritePreviewWidth = this.m_SpritePreviewWidth;
                 float spritePreviewHeight = this.m_SpritePreviewHeight;
                 float spritePreviewX = 0;
@@ -312,7 +323,7 @@ public class SVGPivotEditor : EditorWindow
 
                 // draw pivot
                 px = spritePreviewX + this.m_Pivot.x * spritePreviewWidth;
-                py = spritePreviewY + this.m_Pivot.y * spritePreviewHeight;
+                py = spritePreviewY + (1 - this.m_Pivot.y) * spritePreviewHeight;
                 GUI.DrawTexture(new Rect(px - SVGPivotEditor.PIVOT_CURSOR_DIMENSION * 0.5f, py - SVGPivotEditor.PIVOT_CURSOR_DIMENSION * 0.5f, SVGPivotEditor.PIVOT_CURSOR_DIMENSION, SVGPivotEditor.PIVOT_CURSOR_DIMENSION), SVGPivotEditor.PivotTexture);
             }
 
@@ -351,12 +362,7 @@ public class SVGPivotEditor : EditorWindow
                 GUILayout.BeginHorizontal(GUILayout.Height(SVGPivotEditor.EDIT_FIELDS_HEIGHT));
                 {
                     GUILayout.Label("Pivot", GUILayout.Width(50));
-                    //GUILayout.Label("X", GUILayout.Width(15));
-                    //this.m_Pivot.x = EditorGUILayout.FloatField(this.m_Pivot.x, GUILayout.Width(40));
                     this.m_Pivot.x = SVGPivotEditor.FloatField3DP("X", this.m_Pivot.x);
-
-                    //GUILayout.Label("Y", GUILayout.Width(15));
-                    //this.m_Pivot.y = EditorGUILayout.FloatField(this.m_Pivot.y, GUILayout.Width(40));
                     this.m_Pivot.y = SVGPivotEditor.FloatField3DP("Y", this.m_Pivot.y);
                 }
                 GUILayout.EndHorizontal();
@@ -369,9 +375,13 @@ public class SVGPivotEditor : EditorWindow
                 GUILayout.BeginHorizontal(GUILayout.Height(SVGPivotEditor.BUTTONS_HEIGHT));
                 {
                     if (GUILayout.Button("Cancel", cancelButtonOptions))
+                    {
                         this.Cancel();
+                    }
                     if (GUILayout.Button("Ok", okButtonOptions))
+                    {
                         this.Ok();
+                    }
                 }
                 GUILayout.EndHorizontal();
             }
@@ -385,9 +395,13 @@ public class SVGPivotEditor : EditorWindow
             // keyboard press
             case EventType.KeyDown:
                 if (Event.current.keyCode == KeyCode.Return)
+                {
                     this.Ok();
+                }
                 if (Event.current.keyCode == KeyCode.Escape)
+                {
                     this.Cancel();
+                }
                 break;
             // mouse left button
             case EventType.MouseDown:
@@ -395,18 +409,26 @@ public class SVGPivotEditor : EditorWindow
                 mouseY = Event.current.mousePosition.y;
                 // clamp x coordinate
                 if (mouseX < spritePreviewRect.xMin + SVGPivotEditor.SNAP_CORNER_THRESHOLD)
+                {
                     mouseX = spritePreviewRect.xMin;
+                }
                 if (mouseX + SVGPivotEditor.SNAP_CORNER_THRESHOLD > spritePreviewRect.xMax)
+                {
                     mouseX = spritePreviewRect.xMax;
-                    // clamp y coordinate
+                }
+                // clamp y coordinate
                 if (mouseY < spritePreviewRect.yMin + SVGPivotEditor.SNAP_CORNER_THRESHOLD)
+                {
                     mouseY = spritePreviewRect.yMin;
+                }
                 if (mouseY + SVGPivotEditor.SNAP_CORNER_THRESHOLD > spritePreviewRect.yMax)
+                {
                     mouseY = spritePreviewRect.yMax;
+                }
                 // assign the new pivot value
                 px = (mouseX - spritePreviewRect.xMin) / spritePreviewRect.width;
                 py = (mouseY - spritePreviewRect.yMin) / spritePreviewRect.height;
-                this.m_Pivot.Set(Mathf.Clamp(px, 0, 1), Mathf.Clamp(py, 0, 1));
+                this.m_Pivot.Set(Mathf.Clamp(px, 0, 1), 1 - Mathf.Clamp(py, 0, 1));
                 // force a repaint
                 this.Repaint();
                 break;
@@ -427,7 +449,7 @@ public class SVGPivotEditor : EditorWindow
         
         // keep track of the sprite and the input/output pivot
         editor.m_SpriteAsset = spriteAsset;
-        editor.m_Pivot.Set(pivot.x, 1 - pivot.y);
+        editor.m_Pivot.Set(pivot.x, pivot.y);
         editor.m_Border = border;
         editor.m_SpritePreviewWidth = spriteRect.width;
         editor.m_SpritePreviewHeight = spriteRect.height;

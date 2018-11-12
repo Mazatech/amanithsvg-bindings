@@ -56,14 +56,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
-#if UNITY_5_X && (UNITY_5_4 || UNITY_5_4_OR_NEWER)
-    using UnityEngine.SceneManagement;
-    using UnityEditor.SceneManagement;
-#endif
-using UnityEditor.Callbacks;
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 [CustomEditor(typeof(SVGCanvasBehaviour))]
 public class SVGCanvasEditor : SVGBasicAtlasEditor
@@ -198,7 +192,6 @@ public class SVGCanvasEditor : SVGBasicAtlasEditor
         float offsetScale = EditorGUILayout.FloatField(this.m_OffsetScaleContent, uiAtlas.OffsetScale);
         bool pow2Textures = EditorGUILayout.Toggle(this.m_Pow2TexturesContent, uiAtlas.Pow2Textures);
         int maxTexturesDimension = EditorGUILayout.IntField(this.m_MaxTexturesDimensionContent, uiAtlas.MaxTexturesDimension);
-        //int border = EditorGUILayout.IntField("Sprites padding", uiAtlas.SpritesBorder);
         int border = EditorGUILayout.IntField(this.m_SpritesPaddingContent, uiAtlas.SpritesBorder);
         Color clearColor = EditorGUILayout.ColorField(this.m_ClearColorContent, uiAtlas.ClearColor);
         bool fastUpload = EditorGUILayout.Toggle(this.m_FastUploadContent, uiAtlas.FastUpload);
@@ -223,8 +216,10 @@ public class SVGCanvasEditor : SVGBasicAtlasEditor
         if (uiAtlas.SvgAssetsCount() > 0)
         {
             // list of sprites, grouped by SVG document
-            Vector2 spritesScrollPos = EditorGUILayout.BeginScrollView(this.m_SvgSpritesScrollPos, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+            //Vector2 spritesScrollPos = EditorGUILayout.BeginScrollView(this.m_SvgSpritesScrollPos, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+            Vector2 spritesScrollPos = EditorGUILayout.BeginScrollView(this.m_SvgSpritesScrollPos, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true), GUILayout.MinHeight(uiAtlas.SpritesPreviewSize * 5));
             bool separatorNeeded = false;
+
             for (int i = 0; i < uiAtlas.SvgAssetsCount(); ++i)
             {
                 SVGAssetInput svgAsset = uiAtlas.SvgAsset(i);
@@ -316,11 +311,10 @@ public class SVGCanvasEditor : SVGBasicAtlasEditor
         if ((canvasBehaviour != null) && (canvasBehaviour.UIAtlas != null))
         {
             Canvas canvas = canvasBehaviour.GetComponent<Canvas>();
-
             if (canvas != null)
             {
                 base.OnInspectorGUI();
-
+                // maintain the canvas scale factor synched between Canvas an SVGUIAtlas!
                 canvasBehaviour.EnsureCanvasAssigned();
                 bool isDirty = this.DrawInspector(canvasBehaviour.UIAtlas, canvas);
                 if (isDirty)

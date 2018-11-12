@@ -101,7 +101,7 @@ public class SVGUISpriteLoaderEditor : Editor {
         bool resizeOnStart;
         EditorGUILayout.BeginHorizontal();
         {
-            EditorGUILayout.PrefixLabel ("Resize on Start");
+            EditorGUILayout.PrefixLabel ("Resize on Start()");
             resizeOnStart = EditorGUILayout.Toggle(this.m_EditedLoader.ResizeOnStart);
         }
         EditorGUILayout.EndHorizontal();

@@ -97,13 +97,19 @@ public class Pair<F, S>
     public override bool Equals(object obj)
     {
         if (obj == null)
+        {
             return false;
+        }
         if (obj == this)
+        {
             return true;
+        }
 
         Pair<F, S> other = obj as Pair<F, S>;
         if (other == null)
+        {
             return false;
+        }
         
         return (((this.First == null)  && (other.First == null))  || ((this.First != null)  && First.Equals(other.First))) &&
                (((this.Second == null) && (other.Second == null)) || ((this.Second != null) && Second.Equals(other.Second)));
@@ -114,9 +120,13 @@ public class Pair<F, S>
         int hashcode = 0;
 
         if (this.First != null)
+        {
             hashcode += this.First.GetHashCode();
+        }
         if (this.Second != null)
+        {
             hashcode += this.Second.GetHashCode();
+        }
         
         return hashcode;
     }
@@ -161,13 +171,19 @@ public class Triplet<F, S, T>
     public override bool Equals(object obj)
     {
         if (obj == null)
+        {
             return false;
+        }
         if (obj == this)
+        {
             return true;
+        }
 
         Triplet<F, S, T> other = obj as Triplet<F, S, T>;
         if (other == null)
+        {
             return false;
+        }
 
         return (((this.First == null) && (other.First == null)) || ((this.First != null) && First.Equals(other.First))) &&
                (((this.Second == null) && (other.Second == null)) || ((this.Second != null) && Second.Equals(other.Second))) &&
@@ -179,11 +195,17 @@ public class Triplet<F, S, T>
         int hashcode = 0;
 
         if (this.First != null)
+        {
             hashcode += this.First.GetHashCode();
+        }
         if (this.Second != null)
+        {
             hashcode += this.Second.GetHashCode();
+        }
         if (this.Third != null)
+        {
             hashcode += this.Third.GetHashCode();
+        }
 
         return hashcode;
     }
@@ -202,19 +224,27 @@ public class SerializableDictionary<K, V> : IEnumerable<KeyValuePair<K, V>>
         get
         {
             if (!m_DictionaryRestored)
+            {
                 RestoreDictionary();
+            }
             return m_ValuesList[m_Dictionary[key]];
         }
         set
         {
             if (!m_DictionaryRestored)
+            {
                 RestoreDictionary();
+            }
             
             int index;
             if (m_Dictionary.TryGetValue(key, out index))
+            {
                 m_ValuesList[index] = value;
+            }
             else
+            {
                 Add(key, value);
+            }
         }
     }
     
@@ -248,19 +278,27 @@ public class SerializableDictionary<K, V> : IEnumerable<KeyValuePair<K, V>>
     public V Get(K key, V default_value)
     {
         if (!m_DictionaryRestored)
+        {
             RestoreDictionary();
+        }
         
         int index;
         if (m_Dictionary.TryGetValue(key, out index))
+        {
             return m_ValuesList[index];
+        }
         else
+        {
             return default_value;
+        }
     }
     
     public bool TryGetValue(K key, out V value)
     {
         if (!m_DictionaryRestored)
+        {
             RestoreDictionary();
+        }
         
         int index;
         if (m_Dictionary.TryGetValue(key, out index))
@@ -277,7 +315,9 @@ public class SerializableDictionary<K, V> : IEnumerable<KeyValuePair<K, V>>
     public bool Remove(K key)
     {
         if (!m_DictionaryRestored)
+        {
             RestoreDictionary();
+        }
         
         int index;
         if (m_Dictionary.TryGetValue(key, out index))
@@ -299,7 +339,9 @@ public class SerializableDictionary<K, V> : IEnumerable<KeyValuePair<K, V>>
         m_ValuesList.RemoveAt(index);
         
         for (int k = index; k < m_KeysList.Count; ++k)
+        {
             --m_Dictionary[m_KeysList[k]];
+        }
     }
     
     public KeyValuePair<K, V> GetAt(int index)
@@ -315,7 +357,9 @@ public class SerializableDictionary<K, V> : IEnumerable<KeyValuePair<K, V>>
     public bool ContainsKey(K key)
     {
         if (!m_DictionaryRestored)
+        {
             RestoreDictionary();
+        }
         return m_Dictionary.ContainsKey(key);
     }
     
@@ -334,7 +378,9 @@ public class SerializableDictionary<K, V> : IEnumerable<KeyValuePair<K, V>>
     private void RestoreDictionary()
     {
         for (int i = 0 ; i < m_KeysList.Count; ++i)
+        {
             m_Dictionary[m_KeysList[i]] = i;
+        }
         m_DictionaryRestored = true;
     }
     
@@ -420,7 +466,9 @@ static public class SVGUtils
         uint v = 1;
 
         while (v < value)
+        {
             v <<= 1;
+        }
         return v;
     }
 

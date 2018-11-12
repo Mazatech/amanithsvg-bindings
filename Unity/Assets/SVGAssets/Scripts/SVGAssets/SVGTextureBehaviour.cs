@@ -50,7 +50,9 @@ public class SVGTextureBehaviour : MonoBehaviour
         // create a drawing surface, with the same texture dimensions
         surface = SVGAssets.CreateSurface(texWidth, texHeight);
         if (surface == null)
+        {
             return null;
+        }
         // create the SVG document
         document = SVGAssets.CreateDocument(svgXml);
         if (document == null)
@@ -68,12 +70,16 @@ public class SVGTextureBehaviour : MonoBehaviour
                 texture.hideFlags = HideFlags.DontSave;
                 // copy the surface content into the texture
                 if (fastUpload && Application.isPlaying)
+                {
                     surface.CopyAndDestroy(texture);
+                }
                 else
                 {
                     if (surface.Copy(texture))
+                    {
                         // call Apply() so it's actually uploaded to the GPU
                         texture.Apply(false, true);
+                    }
                 }
             }
         }

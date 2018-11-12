@@ -112,8 +112,10 @@ public class SVGBackgroundBehaviour : MonoBehaviour
                 else
                 {
                     if (surface.Copy(texture))
+                    {
                         // call Apply() so it's actually uploaded to the GPU
                         texture.Apply(false, true);
+                    }
                 }
             }
         }
@@ -138,7 +140,9 @@ public class SVGBackgroundBehaviour : MonoBehaviour
             downScale = scl;
         }
         else
+        {
             downScale = 1;
+        }
         // we want at least a 1x1 texture
         texWidth = Math.Max(Mathf.Floor(texWidth), 1);
         texHeight = Math.Max(Mathf.Floor(texHeight), 1);
@@ -151,7 +155,9 @@ public class SVGBackgroundBehaviour : MonoBehaviour
             return(new Pair<Texture2D, Sprite>(texture, sprite));
         }
         else
+        {
             return(new Pair<Texture2D, Sprite>(null, null));
+        }
     }
 
     private Pair<Texture2D, Sprite> UpdateTexture(float desiredSize, out float downScale)
@@ -212,7 +218,9 @@ public class SVGBackgroundBehaviour : MonoBehaviour
     {
         // load background SVG, if needed
         if (this.m_SvgDoc == null)
+        {
             this.LoadSVG();
+        }
 
         if (this.m_SvgDoc != null)
         {
@@ -220,12 +228,13 @@ public class SVGBackgroundBehaviour : MonoBehaviour
             float texWidth = (float)screenWidth;
             float texHeight = (this.m_SvgDoc.Viewport.Height / this.m_SvgDoc.Viewport.Width) * texWidth;
 
-            if (texHeight >= (float)screenHeight)
-                return new Pair<SVGBackgroundScaleType, int>(SVGBackgroundScaleType.Horizontal, screenWidth);
-            else
-                return new Pair<SVGBackgroundScaleType, int>(SVGBackgroundScaleType.Vertical, screenHeight);
+            return (texHeight >= (float)screenHeight) ? new Pair<SVGBackgroundScaleType, int>(SVGBackgroundScaleType.Horizontal, screenWidth)
+                                                      : new Pair<SVGBackgroundScaleType, int>(SVGBackgroundScaleType.Vertical, screenHeight);
         }
-        return new Pair<SVGBackgroundScaleType, int>(SVGBackgroundScaleType.Horizontal, 0);
+        else
+        {
+            return new Pair<SVGBackgroundScaleType, int>(SVGBackgroundScaleType.Horizontal, 0);
+        }
     }
 
     public void UpdateBackground(bool fullUpdate)
@@ -237,7 +246,9 @@ public class SVGBackgroundBehaviour : MonoBehaviour
         {
             // load background SVG, if needed
             if (this.m_SvgDoc == null)
+            {
                 this.LoadSVG();
+            }
             // update the background with the desired size
             this.UpdateBackground();
         }
@@ -312,7 +323,9 @@ public class SVGBackgroundBehaviour : MonoBehaviour
     {
     #if UNITY_EDITOR
         if (!Application.isPlaying)
+        {
             this.UpdateBackground(true);
+        }
     #endif
     }
 

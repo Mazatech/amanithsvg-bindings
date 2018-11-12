@@ -8,8 +8,8 @@ Sprite:
   m_Name: orc_dx_x5F_leg_x5F_up
   m_Rect:
     serializedVersion: 2
-    x: 272
-    y: 22
+    x: 309
+    y: 1
     width: 36
     height: 52
   m_Offset: {x: 0, y: 10.285713}
@@ -105,14 +105,14 @@ Sprite:
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 272
-      y: 22
+      x: 309
+      y: 1
       width: 36
       height: 52
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 100, y: 290, z: 100, w: 58.285713}
+    uvTransform: {x: 100, y: 327, z: 100, w: 37.285713}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -195,14 +195,14 @@ Sprite:
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 272
-      y: 22
+      x: 309
+      y: 1
       width: 36
       height: 52
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 100, y: 290, z: 100, w: 58.285713}
+    uvTransform: {x: 100, y: 327, z: 100, w: 37.285713}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []

@@ -55,7 +55,7 @@ public class SVGUISpriteLoaderBehaviour : MonoBehaviour
                     SVGRuntimeSprite newSprite = this.UIAtlas.GetRuntimeSprite(this.SpriteReference);
                     if (newSprite != null)
                     {
-                        // NB: we change sprte only, anchors and position will be updated by the canvas
+                        // NB: we change sprite only, anchors and position will be updated by the canvas
                         uiImage.sprite = newSprite.Sprite;
                     }
                 }
@@ -63,13 +63,22 @@ public class SVGUISpriteLoaderBehaviour : MonoBehaviour
         }
     }
 
-    void Start()
+    public void UpdateSprite()
     {
         Image uiImage = gameObject.GetComponent<Image>();
         // update/regenerate sprite, if requested
-        if (((uiImage != null) && (this.UIAtlas != null) && (uiImage.canvas != null)) && (this.ResizeOnStart))
+        if (((uiImage != null) && (this.UIAtlas != null) && (uiImage.canvas != null)))
         {
-            this.UpdateSprite (uiImage.canvas.scaleFactor * this.UIAtlas.OffsetScale);
+            this.UpdateSprite(uiImage.canvas.scaleFactor * this.UIAtlas.OffsetScale);
+        }
+    }
+
+    void Start()
+    {
+        // update/regenerate sprite, if requested
+        if (this.ResizeOnStart)
+        {
+            this.UpdateSprite();
         }
     }
 
@@ -82,7 +91,9 @@ public class SVGUISpriteLoaderBehaviour : MonoBehaviour
         foreach (Component component in components)
         {
             if (component == this)
+            {
                 continue;
+            }
             // show warning
             EditorUtility.DisplayDialog("Can't add the same component multiple times!",
                                         string.Format("The component {0} can't be added because {1} already contains the same component.", this.GetType(), gameObject.name),
@@ -112,14 +123,14 @@ public class SVGUISpriteLoaderBehaviour : MonoBehaviour
             this.UIAtlas = null;
             this.SpriteReference = null;
             this.ResizeOnStart = true;
-            //this.UpdateTransform = true;
             Image uiImage = gameObject.GetComponent<Image>();
             uiImage.type = Image.Type.Simple;
             uiImage.material = null;
             if (uiImage.canvas != null) {
                 // set the atlas associated to the canvas (see SVGCanvasBehaviour)
                 SVGCanvasBehaviour svgCanvas = uiImage.canvas.GetComponent<SVGCanvasBehaviour>();
-                if (svgCanvas != null) {
+                if (svgCanvas != null)
+                {
                     this.UIAtlas = svgCanvas.UIAtlas;
                 }
             }

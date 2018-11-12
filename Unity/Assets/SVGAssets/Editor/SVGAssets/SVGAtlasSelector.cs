@@ -52,7 +52,9 @@ public class SVGAtlasSelector : ScriptableWizard
             SVGAtlas atlas = asset as SVGAtlas;
             
             if (atlas != null)
+            {
                 atlasesList.Add(atlas);
+            }
         }
 
         // sort atlases by name
@@ -69,10 +71,14 @@ public class SVGAtlasSelector : ScriptableWizard
         List<SVGAtlas> result;
 
         if (wholeList == null)
+        {
             return new List<SVGAtlas>();
+        }
 
         if (string.IsNullOrEmpty(match))
+        {
             return wholeList;
+        }
 
         // create the output list
         result = new List<SVGAtlas>();
@@ -81,16 +87,22 @@ public class SVGAtlasSelector : ScriptableWizard
         foreach (SVGAtlas atlas in wholeList)
         {
             if (!string.IsNullOrEmpty(atlas.name) && string.Equals(match, atlas.name, StringComparison.OrdinalIgnoreCase))
+            {
                 result.Add(atlas);
+            }
         }
         // if an exact match has been found, simply return the result
         if (result.Count > 0)
+        {
             return result;
+        }
 
         // search for (space) separated components
         string[] searchKeys = match.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
         for (int i = 0; i < searchKeys.Length; ++i)
+        {
             searchKeys[i] = searchKeys[i].ToLower();
+        }
 
         // find all atlases whose names contain one ore more keyword
         foreach (SVGAtlas atlas in wholeList)
@@ -108,7 +120,9 @@ public class SVGAtlasSelector : ScriptableWizard
 
                 // (matchesCount == searchKeys.Length) if we were interested in finding all atlases whose names contain ALL the keywords
                 if (matchesCount > 0)
+                {
                     result.Add(atlas);
+                }
             }
         }
 
@@ -170,15 +184,25 @@ public class SVGAtlasSelector : ScriptableWizard
     private bool DrawGUI()
     {
         bool close = false;
-        int columnsPerRow = Math.Max(Mathf.FloorToInt(Screen.width / SVGAtlasSelector.ATLAS_PREVIEW_DIMENSION_PADDED), 1);
+    #if UNITY_EDITOR_WIN
+        // take care of dpi scaling factor on Windows (Display Settings --> Advanced scaling settings)
+        float dpi = Screen.dpi;
+        // dpi  96 == 1.00
+        // dpi 120 == 1.25
+        // dpi 144 == 1.50
+        // dpi 168 == 1.75
+        // ... and so on
+        float dpiAdjust = (((dpi - 96.0f) / 24.0f) * 0.25f) + 1.0f;
+    #else
+        float dpiAdjust = 1.0f;
+    #endif
+        int columnsPerRow = Math.Max(Mathf.FloorToInt((Screen.width / dpiAdjust) / SVGAtlasSelector.ATLAS_PREVIEW_DIMENSION_PADDED), 1);
         int rowsCount = 1;
         int atlasIdx = 0;
         Rect rect = new Rect(SVGAtlasSelector.ATLAS_PREVIEW_BORDER, SVGAtlasSelector.ATLAS_PREVIEW_BORDER,
                              SVGAtlasSelector.ATLAS_PREVIEW_DIMENSION, SVGAtlasSelector.ATLAS_PREVIEW_DIMENSION);
-        
         // draw header, with the name of atlas and the "search by name" toolbox
         List<SVGAtlas> atlasesList = this.Header();
-        //GUILayout.Space(10);
 
         this.m_ScrollPos = GUILayout.BeginScrollView(this.m_ScrollPos);
         while (atlasIdx < atlasesList.Count)
@@ -200,13 +224,17 @@ public class SVGAtlasSelector : ScriptableWizard
                         if (Event.current.button == 0)
                         {
                             if (this.m_Callback != null)
+                            {
                                 this.m_Callback(atlas);
+                            }
                             close = true;
                         }
                     }
                     // draw atlas preview
                     if (Event.current.type == EventType.Repaint)
+                    {
                         SVGAtlasSelector.AtlasPreview(atlas, rect, this.m_TextureIndex);
+                    }
                     // draw atlas name
                     SVGAtlasSelector.AtlasLabel(atlas.name, rect);
                     
@@ -215,7 +243,9 @@ public class SVGAtlasSelector : ScriptableWizard
                     // next column
                     rect.x += SVGAtlasSelector.ATLAS_PREVIEW_DIMENSION_PADDED;
                     if (++currentColumn >= columnsPerRow)
+                    {
                         break;
+                    }
                 }
             }
             
@@ -237,7 +267,9 @@ public class SVGAtlasSelector : ScriptableWizard
         {
             // draw the actual wizard content
             if (this.DrawGUI())
+            {
                 this.Close();
+            }
         }
     }
 

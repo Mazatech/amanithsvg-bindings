@@ -35,10 +35,8 @@
 ****************************************************************************/
 using UnityEngine; 
 using UnityEditor;
-using UnityEditor.Callbacks;
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 // Menu item used to create a new atlas generator
 public class SVGAtlasAsset
@@ -216,6 +214,7 @@ public class SVGAtlasEditor : SVGBasicAtlasEditor
         {
             // list of sprites, grouped by SVG document
             Vector2 spritesScrollPos = EditorGUILayout.BeginScrollView(this.m_SvgSpritesScrollPos, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+
             bool separatorNeeded = false;
             for (int i = 0; i < atlas.SvgAssetsCount(); ++i)
             {

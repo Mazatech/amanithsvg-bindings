@@ -46,7 +46,6 @@ public class SVGSpriteSelector : ScriptableWizard
 
         spritesAssets.Sort(delegate(SVGSpriteAssetFile spriteAsset1, SVGSpriteAssetFile spriteAsset2)
         {
-
             Sprite sprite1 = spriteAsset1.SpriteData.Sprite;
             Sprite sprite2 = spriteAsset2.SpriteData.Sprite;
 
@@ -62,10 +61,14 @@ public class SVGSpriteSelector : ScriptableWizard
         List<SVGSpriteAssetFile> result;
 
         if (wholeList == null)
+        {
             return new List<SVGSpriteAssetFile>();
+        }
 
         if (string.IsNullOrEmpty(match))
+        {
             return wholeList;
+        }
 
         // create the output list
         result = new List<SVGSpriteAssetFile>();
@@ -75,16 +78,22 @@ public class SVGSpriteSelector : ScriptableWizard
         {
             Sprite sprite = spriteAsset.SpriteData.Sprite;
             if (!string.IsNullOrEmpty(sprite.name) && string.Equals(match, sprite.name, StringComparison.OrdinalIgnoreCase))
+            {
                 result.Add(spriteAsset);
+            }
         }
         // if an exact match has been found, simply return the result
         if (result.Count > 0)
+        {
             return result;
+        }
 
         // search for (space) separated components
         string[] searchKeys = match.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
         for (int i = 0; i < searchKeys.Length; ++i)
+        {
             searchKeys[i] = searchKeys[i].ToLower();
+        }
 
         // find all sprites whose names contain one ore more keyword
         foreach (SVGSpriteAssetFile spriteAsset in wholeList)
@@ -98,12 +107,16 @@ public class SVGSpriteSelector : ScriptableWizard
                 foreach (string key in searchKeys)
                 {
                     if (lowerName.Contains(key))
+                    {
                         matchesCount++;
+                    }
                 }
 
                 // (matchesCount == searchKeys.Length) if we were interested in finding all sprites whose names contain ALL the keywords
                 if (matchesCount > 0)
+                {
                     result.Add(spriteAsset);
+                }
             }
         }
 
@@ -161,15 +174,25 @@ public class SVGSpriteSelector : ScriptableWizard
     private bool DrawGUI()
     {
         bool close = false;
-        int columnsPerRow = Math.Max(Mathf.FloorToInt(Screen.width / SVGSpriteSelector.SPRITE_PREVIEW_DIMENSION_PADDED), 1);
+    #if UNITY_EDITOR_WIN
+        // take care of dpi scaling factor on Windows (Display Settings --> Advanced scaling settings)
+        float dpi = Screen.dpi;
+        // dpi  96 == 1.00
+        // dpi 120 == 1.25
+        // dpi 144 == 1.50
+        // dpi 168 == 1.75
+        // ... and so on
+        float dpiAdjust = (((dpi - 96.0f) / 24.0f) * 0.25f) + 1.0f;
+    #else
+        float dpiAdjust = 1.0f;
+    #endif
+        int columnsPerRow = Math.Max(Mathf.FloorToInt((Screen.width / dpiAdjust) / SVGSpriteSelector.SPRITE_PREVIEW_DIMENSION_PADDED), 1);
         int rowsCount = 1;
         int spriteIdx = 0;
         Rect rect = new Rect(SVGSpriteSelector.SPRITE_PREVIEW_BORDER, SVGSpriteSelector.SPRITE_PREVIEW_BORDER,
                              SVGSpriteSelector.SPRITE_PREVIEW_DIMENSION, SVGSpriteSelector.SPRITE_PREVIEW_DIMENSION);
-        
         // draw header, with the name of atlas and the "search by name" toolbox
         List<SVGSpriteAssetFile> spritesList = this.Header();
-        //GUILayout.Space(10);
         
         this.m_ScrollPos = GUILayout.BeginScrollView(this.m_ScrollPos);
         while (spriteIdx < spritesList.Count)
@@ -192,14 +215,18 @@ public class SVGSpriteSelector : ScriptableWizard
                         if (Event.current.button == 0)
                         {
                             if (this.m_Callback != null)
+                            {
                                 this.m_Callback(spriteAsset);
+                            }
                             close = true;
                         }
                     }
-                    
+
                     // show sprite preview, taking care to highlight the currently selected one
                     if (Event.current.type == EventType.Repaint)
+                    {
                         SVGSpriteSelector.SpritePreview(sprite, rect);
+                    }
                     // draw sprite name
                     SVGSpriteSelector.SpriteLabel(sprite.name, rect);
                     
@@ -208,7 +235,9 @@ public class SVGSpriteSelector : ScriptableWizard
                     // next column
                     rect.x += SVGSpriteSelector.SPRITE_PREVIEW_DIMENSION_PADDED;
                     if (++currentColumn >= columnsPerRow)
+                    {
                         break;
+                    }
                 }
             }
             
@@ -230,7 +259,9 @@ public class SVGSpriteSelector : ScriptableWizard
         {
             // draw the actual wizard content
             if (this.DrawGUI())
+            {
                 this.Close();
+            }
         }
     }
 
@@ -258,7 +289,6 @@ public class SVGSpriteSelector : ScriptableWizard
             selector.m_Callback = callback;
             selector.m_ScrollPos = Vector2.zero;
             selector.m_SpritesList = SVGSpriteSelector.GetSpritesList(atlas);
-            //selector.m_SelectedSprite = null;
         }
     }
 

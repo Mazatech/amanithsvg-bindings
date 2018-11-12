@@ -44,57 +44,79 @@ public class OrcBehaviour : MonoBehaviour
         Vector3 cameraPos = new Vector3(orcPos.x, 0, -10);
         float cameraWorldLeft = cameraPos.x - (this.Camera.WorldWidth / 2);
         float cameraWorldRight = cameraPos.x + (this.Camera.WorldWidth / 2);
+
         // make sure the camera won't go outside the background
         if (cameraWorldLeft < this.Background.WorldLeft)
-            return (cameraPos + new Vector3(this.Background.WorldLeft - cameraWorldLeft, 0, 0));
+        {
+            cameraPos.x += this.Background.WorldLeft - cameraWorldLeft;
+        }
         if (cameraWorldRight > this.Background.WorldRight)
-            return (cameraPos - new Vector3(cameraWorldRight - this.Background.WorldRight, 0, 0));
+        {
+            cameraPos.x -= cameraWorldRight - this.Background.WorldRight;
+        }
         return cameraPos;
     }
 
     private void CameraPosAssign(Vector3 orcPos)
     {
-        if (this.Background != null && this.Camera != null)
+        if ((this.Background != null) && (this.Camera != null))
+        {
             // set the camera according to the orc position
             this.Camera.transform.position = (this.Camera.PixelWidth > this.Background.PixelWidth) ? new Vector3(0, 0, -10) : this.CameraPosCalc(orcPos);
+        }
+    }
+
+    private float BackgroundWalkingLine()
+    {
+        // walking line is located at ~12% of the background half height, in world coordinates
+        return (Background != null) ? (-this.Background.WorldHeight * 0.5f) * 0.12f : 0.0f;
     }
 
     private void ResetOrcPos()
     {
-        // move the orc at the world origin and set the camera according to the orc position
-        Vector3 orcPos = new Vector3(0, 0, 0);
+        Vector3 orcPos = new Vector3(0, this.BackgroundWalkingLine(), 0);
+        // move the orc at the walking line
         this.transform.position = orcPos;
         this.CameraPosAssign(orcPos);
-        // at the next LateUpdate() we must position the orc on the walking line
-        this.m_PositionOnWalkingLine = true;
     }
 
     private void WalkAnimation()
     {
         if (this.m_Animator != null)
-        	this.m_Animator.Play("walking");
+        {
+            this.m_Animator.Play("walking");
+        }
     }
     
     private void IdleAnimation()
     {
         if (this.m_Animator != null)
+        {
             this.m_Animator.Play("idle");
+        }
     }
 
     private void Move(Vector3 delta)
     {
         // move the orc
         Vector3 orcPos = this.transform.position + delta;
+        // get the orc (body) sprite loader
+        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        float orcBodyWidth = spriteRenderer.sprite.bounds.size.x;
         // orc body pivot is located at 50% of the whole orc sprite, so we can calculate bounds easily
-        float orcWorldLeft = orcPos.x - this.m_WorldWidth / 2;
-        float orcWorldRight = orcPos.x + this.m_WorldWidth / 2;
-
+        float orcWorldLeft = orcPos.x - (orcBodyWidth / 2);
+        float orcWorldRight = orcPos.x + (orcBodyWidth / 2);
+        // make sure the orc won't go outside the background
         if (orcWorldLeft < this.Background.WorldLeft)
+        {
             orcPos.x += (this.Background.WorldLeft - orcWorldLeft);
+        }
         else
         if (orcWorldRight > this.Background.WorldRight)
+        {
             orcPos.x -= (orcWorldRight - this.Background.WorldRight);
-
+        }
+        // update the orc position
         this.transform.position = orcPos;
         // set the camera according to the orc position
         this.CameraPosAssign(orcPos);
@@ -103,7 +125,7 @@ public class OrcBehaviour : MonoBehaviour
 
     private void MoveLeft()
     {
-        // flip the orc
+        // flip the orc horizontally
         this.transform.localScale = new Vector3(-1, this.transform.localScale.y, this.transform.localScale.z);
         this.Move(new Vector3(-WALKING_SPEED, 0, 0));
     }
@@ -111,42 +133,41 @@ public class OrcBehaviour : MonoBehaviour
     private void MoveRight()
     {
         this.transform.localScale = new Vector3(1, this.transform.localScale.y, this.transform.localScale.z);
-        this.Move (new Vector3 (WALKING_SPEED, 0, 0));
+        this.Move(new Vector3 (WALKING_SPEED, 0, 0));
     }
 
-    private float BackgroundWalkingLine()
+    private void ResizeBackground(int newScreenWidth, int newScreenHeight)
     {
-        // walking line is located at 48% of the half height, in world coordinates
-        return ((this.Background != null) ? (this.Background.transform.position.y - (this.Background.WorldHeight / 2) * 0.48f) : 0);
+        if (this.Background != null)
+        {
+            // we want to cover the whole screen
+            Pair<SVGBackgroundScaleType, int> scaleData = this.Background.CoverFullScreen(newScreenWidth, newScreenHeight);
+            this.Background.ScaleAdaption = scaleData.First;
+            this.Background.Size = scaleData.Second;
+            this.Background.UpdateBackground(false);
+        }
     }
 
-	private void ResizeBackground(int newScreenWidth, int newScreenHeight)
-	{
-		if (this.Background != null)
-		{
-			// we want to cover the whole screen
-			Pair<SVGBackgroundScaleType, int> scaleData = this.Background.CoverFullScreen(newScreenWidth, newScreenHeight);
-			this.Background.ScaleAdaption = scaleData.First;
-			this.Background.Size = scaleData.Second;
-			this.Background.UpdateBackground(false);
-		}
-	}
+    private void ResizeOrcCharacter(int backgroundWidth, int backgroundHeight)
+    {
+        // get the orc (body) sprite loader
+        SVGSpriteLoaderBehaviour spriteLoader = gameObject.GetComponent<SVGSpriteLoaderBehaviour>();
+        // update/regenerate all orc sprites; NB: we want to size the orc according to
+        // the background sprite (actually the background height)
+        if (spriteLoader != null)
+        {
+            spriteLoader.UpdateSprite(true, backgroundWidth, backgroundHeight);
+        }
+    }
 
     private void OnResize(int newScreenWidth, int newScreenHeight)
     {
         // render the background at the right resolution
-		this.ResizeBackground(newScreenWidth, newScreenHeight);
-
-        // get the orc (body) sprite loader
-        SVGSpriteLoaderBehaviour spriteLoader = this.gameObject.GetComponent<SVGSpriteLoaderBehaviour>();
-        // update all sprites that form the orc
-        if (spriteLoader != null)
-        {
-            // update/regenerate all orc sprites
-            spriteLoader.UpdateSprite(true, newScreenWidth, newScreenHeight);
-            // move the orc at the world origin and set the camera according to the orc position; at the next LateUpdate() we must position the orc on the walking line
-            this.ResetOrcPos();
-        }
+        this.ResizeBackground(newScreenWidth, newScreenHeight);
+        // update/regenerate all orc sprites according to the background dimensions
+        this.ResizeOrcCharacter((int)this.Background.PixelWidth, (int)this.Background.PixelHeight);
+        // move the orc at the world origin and set the camera according to the orc position
+        this.ResetOrcPos();
     }
 
     void Start()
@@ -158,70 +179,50 @@ public class OrcBehaviour : MonoBehaviour
         if (this.Background != null)
         {
             this.Background.transform.position = new Vector3(0, 0, 0);
-            this.Background = this.Background.GetComponent<SVGBackgroundBehaviour>();
         }
         // register handler for device orientation change
-        this.Camera = (this.Camera != null) ? this.Camera.GetComponent<SVGCameraBehaviour>() : null;
         if (this.Camera != null)
-		{
-			// register ourself for receiving resize events
+        {
+            // register ourself for receiving resize events
             this.Camera.OnResize += this.OnResize;
-			// now fire a resize event by hand
-			this.Camera.Resize(true);
-		}
+            // now fire a resize event by hand
+            this.Camera.Resize(true);
+        }
     }
     
     void LateUpdate()
     {
-        if (this.m_PositionOnWalkingLine)
-        {
-            // recalc whole orc dimensions, in world coordinates
-            // orc width is about 13.5% of the background width, in world coordinates
-            this.m_WorldWidth = this.Background.WorldWidth * 0.135f;
-            // orc height is about 42% of the background height, in world coordinates
-            this.m_WorldHeight = this.Background.WorldHeight * 0.42f;
-            // position the orc at the walking line
-            Vector3 pos = this.transform.position;
-
-            if (this.Background != null)
-            {
-                // walking line is located at 48% of the half height, in world coordinates
-                pos.y = this.Background.transform.position.y - (this.Background.WorldHeight / 2) * 0.48f;
-                // orc body pivot is located at the half orc height, in world coordinates
-                pos.y += this.m_WorldHeight / 2;
-            }
-
-            this.transform.position = pos;
-            // now the orc has been positioned on the walking line, so clear the flag
-            this.m_PositionOnWalkingLine = false;
-        }
-
         if (Input.GetButton("Fire1"))
         {
             Vector3 worldMousePos = this.Camera.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
-            // 5% distance threshold
-            float delta = this.m_WorldWidth * 0.05f;
+            
+            // get the orc (body) sprite loader
+            SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            float orcBodyWidth = spriteRenderer.sprite.bounds.size.x;
+            // orc body pivot is located at 50% of the whole orc sprite, so we can calculate bounds easily
+            float orcWorldLeft = transform.position.x - (orcBodyWidth / 2);
+            float orcWorldRight = transform.position.x + (orcBodyWidth / 2);
 
-            if (worldMousePos.x > this.transform.position.x + delta)
+            if (worldMousePos.x > orcWorldRight)
+            {
                 this.MoveRight();
+            }
             else
-            if (worldMousePos.x < this.transform.position.x - delta)
+            if (worldMousePos.x < orcWorldLeft)
+            {
                 this.MoveLeft();
+            }
         }
         else
+        {
             this.IdleAnimation();
+        }
     }
 
     // the scene camera
-	public SVGCameraBehaviour Camera;
+    public SVGCameraBehaviour Camera;
     // the background gameobject
-	public SVGBackgroundBehaviour Background;
-    // width of the whole orc sprite, in world coordinates
-    private float m_WorldWidth;
-    // height of the whole orc sprite, in world coordinates
-    private float m_WorldHeight;
-    // if true, at the next LateUpdate() we must position the orc on the walking line
-    private bool m_PositionOnWalkingLine = false;
+    public SVGBackgroundBehaviour Background;
     // the orc animator
     private Animator m_Animator;
     // the walking speed, in world coordinates

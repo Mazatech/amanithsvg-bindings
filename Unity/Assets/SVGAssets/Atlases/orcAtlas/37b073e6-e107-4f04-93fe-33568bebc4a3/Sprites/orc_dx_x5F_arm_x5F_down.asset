@@ -8,8 +8,8 @@ Sprite:
   m_Name: orc_dx_x5F_arm_x5F_down
   m_Rect:
     serializedVersion: 2
-    x: 346
-    y: 61
+    x: 383
+    y: 40
     width: 30
     height: 66
   m_Offset: {x: 0, y: 23.294113}
@@ -105,14 +105,14 @@ Sprite:
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 346
-      y: 61
+      x: 383
+      y: 40
       width: 30
       height: 66
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 100, y: 361, z: 100, w: 117.29411}
+    uvTransform: {x: 100, y: 398, z: 100, w: 96.29411}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -195,14 +195,14 @@ Sprite:
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 346
-      y: 61
+      x: 383
+      y: 40
       width: 30
       height: 66
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 100, y: 361, z: 100, w: 117.29411}
+    uvTransform: {x: 100, y: 398, z: 100, w: 96.29411}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []

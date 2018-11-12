@@ -48,10 +48,14 @@ public static class ScriptableObjectUtility
         string path = AssetDatabase.GetAssetPath(Selection.activeObject);
 
         if (path == "") 
+        {
             path = "Assets";
+        }
         else
         if (Path.GetExtension(path) != "") 
+        {
             path = path.Replace(Path.GetFileName(AssetDatabase.GetAssetPath(Selection.activeObject)), "");
+        }
 
         string assetPathAndName = AssetDatabase.GenerateUniqueAssetPath(path + "/New " + typeof(T).ToString() + ".asset");
         AssetDatabase.CreateAsset(asset, assetPathAndName);
@@ -343,7 +347,6 @@ public abstract class SVGBasicAtlasEditor : Editor
         {
             EditorGUILayout.PrefixLabel("Textures subfolder");
             EditorGUILayout.LabelField(atlas.TexturesSubFolder);
-            //EditorGUILayout.SelectableLabel(atlas.TexturesFolder(), EditorStyles.textField, GUILayout.Height(EditorGUIUtility.singleLineHeight));
         }
         EditorGUILayout.EndHorizontal();
         // sprites output subfolder
@@ -360,10 +363,10 @@ public abstract class SVGBasicAtlasEditor : Editor
 
     protected bool UpdateButtonDraw(SVGBasicAtlas atlas)
     {
-        bool pushed;
-
+        bool pushed = false;
         // update button
         string updateStr = (atlas.NeedsUpdate()) ? "Update *" : "Update";
+
         if (GUILayout.Button(updateStr))
         {
             // close all modal popup editors
@@ -371,10 +374,6 @@ public abstract class SVGBasicAtlasEditor : Editor
             SVGSpriteSelector.CloseAll();
             SVGAtlasSelector.CloseAll();
             pushed = true;
-        }
-        else
-        {
-            pushed = false;
         }
 
         return pushed;
@@ -581,7 +580,6 @@ public abstract class SVGBasicAtlasEditor : Editor
             }
         }
 
-        //if (currentEvent.type == EventType.MouseUp || currentEvent.rawType == EventType.MouseUp || currentEvent.type == EventType.DragExited)
         if (currentEvent.type == EventType.DragExited)
         {
             this.m_DragInfo.StopDrag();

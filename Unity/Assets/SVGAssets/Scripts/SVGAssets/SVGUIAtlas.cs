@@ -54,30 +54,19 @@
 #endif
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 #if UNITY_EDITOR
-    using System.IO;
-    using System.Text;
-    using System.Security.Cryptography;
     using UnityEditor;
-    using UnityEditorInternal;
-    using System.Reflection;
 #endif
 
 public enum SVGUIWidgetType
 {
     Image = 0,
     Button = 1,
-    //Toggle = 2,
-    //Slider = 3,
-    //ScrollBar = 4,
-    //DropDown = 5,
     InputField = 2,
     Panel = 3
-    //ScrollView = 8
 }
 
 public class SVGUIAtlas : SVGBasicAtlas
@@ -148,7 +137,9 @@ public class SVGUIAtlas : SVGBasicAtlas
                                                           string.Format("{0} gameobjects reference sprites that do not exist anymore. Would you like to remove them from the scene?", spritesInstances.Count),
                                                           "Remove", "Keep");
                 if (remove)
+                {
                     this.DeleteGameObjects(spritesInstances);
+                }
             }
             AssetDatabase.StopAssetEditing();
             // input SVG list is empty, simply reset both hash
@@ -163,7 +154,7 @@ public class SVGUIAtlas : SVGBasicAtlas
 
         if (SVGRuntimeGenerator.GenerateSprites(// input
                                                 this.m_SvgList, this.m_MaxTexturesDimension, this.m_SpritesBorder, this.m_Pow2Textures, newScale, this.m_ClearColor, this.m_FastUpload, this.m_GeneratedSpritesFiles,
-            // output
+                                                // output
                                                 textures, sprites, this.m_GeneratedSpritesLists))
         {
             int i, j;
@@ -231,7 +222,9 @@ public class SVGUIAtlas : SVGBasicAtlas
                         }
                     }
                     else
+                    {
                         missingSpriteObjs.Add(gameObj);
+                    }
                 }
             }
 
@@ -241,12 +234,16 @@ public class SVGUIAtlas : SVGBasicAtlas
                                                           string.Format("{0} gameobjects reference sprites that do not exist anymore. Would you like to remove them from the scene?", missingSpriteObjs.Count),
                                                           "Remove", "Keep");
                 if (remove)
+                {
                     this.DeleteGameObjects(missingSpriteObjs);
+                }
             }
 
             // now SVG documents are instantiable
             foreach (SVGAssetInput svgAsset in this.m_SvgList)
+            {
                 svgAsset.Instantiable = true;
+            }
             // keep track of the new hash
             this.m_SvgListHashOld = this.m_SvgListHashCurrent;
         }
@@ -412,7 +409,9 @@ public class SVGUIAtlas : SVGBasicAtlas
             return false;
         }
         else
+        {
             return true;
+        }
     }
 
     public override bool SvgAssetMove(SVGAssetInput svgAsset, int toIndex)

@@ -70,7 +70,9 @@ public class SVGSpriteLoaderBehaviour : MonoBehaviour
                         renderer.sprite = newSprite.Sprite;
                         // fix for the first time the sprite is regenerated at runtime
                         if (this.m_RuntimeScale == 0)
+                        {
                             this.m_RuntimeScale = this.Atlas.EditorGenerationScale;
+                        }
                         // update local position
                         this.FixLocalPosition(newSprite.GenerationScale / this.m_RuntimeScale);
                         this.m_RuntimeScale = newSprite.GenerationScale;
@@ -94,7 +96,9 @@ public class SVGSpriteLoaderBehaviour : MonoBehaviour
                 GameObject gameObj = this.transform.GetChild(i).gameObject;
                 SVGSpriteLoaderBehaviour loader = gameObj.GetComponent<SVGSpriteLoaderBehaviour>();
                 if (loader != null)
+                {
                     loader.UpdateSprite(updateChildren, currentScreenWidth, currentScreenHeight);
+                }
             }
         }
     }
@@ -105,7 +109,9 @@ public class SVGSpriteLoaderBehaviour : MonoBehaviour
         this.m_OldPos = this.transform.localPosition;
         // update/regenerate sprite, if requested
         if (this.ResizeOnStart)
+        {
             this.UpdateSprite((int)SVGAssets.ScreenResolutionWidth, (int)SVGAssets.ScreenResolutionHeight);
+        }
     }
     
     void LateUpdate()
@@ -129,7 +135,9 @@ public class SVGSpriteLoaderBehaviour : MonoBehaviour
         foreach (Component component in components)
         {
             if (component == this)
+            {
                 continue;
+            }
             // show warning
             EditorUtility.DisplayDialog("Can't add the same component multiple times!",
                                         string.Format("The component {0} can't be added because {1} already contains the same component.", this.GetType(), gameObject.name),

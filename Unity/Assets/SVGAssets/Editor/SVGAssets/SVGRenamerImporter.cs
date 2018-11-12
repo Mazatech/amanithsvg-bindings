@@ -43,8 +43,6 @@ public class SVGRenamerImporter : AssetPostprocessor
                                        string[] movedAssets,
                                        string[] movedFromAssetPaths)
     {
-        //int i, j;
-
         foreach (string assetPath in importedAssets)
         {
             if (Path.GetExtension(assetPath) == ".svg")
@@ -70,17 +68,5 @@ public class SVGRenamerImporter : AssetPostprocessor
                 AssetDatabase.Refresh();
             }
         }
-
-        /*
-        j = movedAssets.Length;
-        for (i = 0; i < j; ++i) {
-            string prevName = Path.GetFileNameWithoutExtension(movedFromAssetPaths[i]);
-            string newName = Path.GetFileNameWithoutExtension(movedAssets[i]);
-            if (newName != prevName)
-            {
-                
-            }
-        }
-        */
     }
 }

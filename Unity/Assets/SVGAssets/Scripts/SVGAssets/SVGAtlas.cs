@@ -54,16 +54,10 @@
 #endif
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_EDITOR
-    using System.IO;
-    using System.Text;
-    using System.Security.Cryptography;
     using UnityEditor;
-    using UnityEditorInternal;
-    using System.Reflection;
 #endif
 
 public class SVGAtlas : SVGBasicAtlas

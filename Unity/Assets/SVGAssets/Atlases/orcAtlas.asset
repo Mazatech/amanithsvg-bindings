@@ -14,7 +14,7 @@ MonoBehaviour:
   m_GUID: 37b073e6-e107-4f04-93fe-33568bebc4a3
   m_OutputFolder: Assets/SVGAssets/Atlases
   m_OffsetScale: 1
-  m_Pow2Textures: 1
+  m_Pow2Textures: 0
   m_MaxTexturesDimension: 2048
   m_SpritesBorder: 1
   m_ClearColor: {r: 1, g: 1, b: 1, a: 0}
@@ -24,7 +24,7 @@ MonoBehaviour:
     Scale: 1
     SeparateGroups: 1
     Instantiable: 1
-    InstanceBaseIdx: 10
+    InstanceBaseIdx: 20
   m_GeneratedTexturesFiles:
   - Path: Assets/SVGAssets/Atlases/orcAtlas/37b073e6-e107-4f04-93fe-33568bebc4a3/Textures/texture0.asset
     Object: {fileID: 2800000, guid: 6ecfb725440c7594cbdd33c182e4e4ae, type: 2}
@@ -37,6 +37,8 @@ MonoBehaviour:
     - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
       ElemIdx: 65538
     - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
+      ElemIdx: 65540
+    - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
       ElemIdx: 65541
     - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
       ElemIdx: 65542
@@ -48,8 +50,6 @@ MonoBehaviour:
       ElemIdx: 65539
     - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
       ElemIdx: 65537
-    - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
-      ElemIdx: 65540
     m_ValuesList:
     - Path: Assets/SVGAssets/Atlases/orcAtlas/37b073e6-e107-4f04-93fe-33568bebc4a3/Sprites/orc_head.asset
       SpriteRef:
@@ -89,6 +89,20 @@ MonoBehaviour:
         Border: {x: 0, y: 0, z: 0, w: 0}
         ZOrder: 2
         OriginalX: 76
+        OriginalY: 192
+        GenerationScale: 1
+        InCurrentInstancesGroup: 1
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/orcAtlas/37b073e6-e107-4f04-93fe-33568bebc4a3/Sprites/orc_dx_x5F_leg_x5F_down.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
+        ElemIdx: 65540
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 4347f04736a94664194088dffbdfd283, type: 2}
+        Pivot: {x: 0.5, y: 0.8018868}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 4
+        OriginalX: 42
         OriginalY: 192
         GenerationScale: 1
         InCurrentInstancesGroup: 1
@@ -177,25 +191,11 @@ MonoBehaviour:
         GenerationScale: 1
         InCurrentInstancesGroup: 1
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/orcAtlas/37b073e6-e107-4f04-93fe-33568bebc4a3/Sprites/orc_dx_x5F_leg_x5F_down.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
-        ElemIdx: 65540
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 4347f04736a94664194088dffbdfd283, type: 2}
-        Pivot: {x: 0.5, y: 0.8018868}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 4
-        OriginalX: 42
-        OriginalY: 192
-        GenerationScale: 1
-        InCurrentInstancesGroup: 1
-      InstantiatedWidgetType: 1
   m_EditorGenerationScale: 1
-  m_SvgListHashOld: E47405DDA887A7552D54CB5DE39D8C20
-  m_SvgListHashCurrent: E47405DDA887A7552D54CB5DE39D8C20
+  m_SvgListHashOld: 8854CD3C5459EA3A13E3B057009478AD
+  m_SvgListHashCurrent: 8854CD3C5459EA3A13E3B057009478AD
   m_GeneratedSpritesLists:
-    m_KeysList: be2b0000
+    m_KeysList: 9e2b0000
     m_ValuesList:
     - Sprites:
       - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
@@ -204,6 +204,8 @@ MonoBehaviour:
         ElemIdx: 65543
       - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
         ElemIdx: 65538
+      - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
+        ElemIdx: 65540
       - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
         ElemIdx: 65541
       - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
@@ -216,9 +218,7 @@ MonoBehaviour:
         ElemIdx: 65539
       - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
         ElemIdx: 65537
-      - TxtAsset: {fileID: 4900000, guid: e4bf6b66c7449bd46a8c0c3c86581cd5, type: 3}
-        ElemIdx: 65540
-  m_SpritesPreviewSize: 48
+  m_SpritesPreviewSize: 35
   m_ReferenceWidth: 960
   m_ReferenceHeight: 540
   m_DeviceTestWidth: 960

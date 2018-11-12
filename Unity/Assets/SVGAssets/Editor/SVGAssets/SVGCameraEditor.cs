@@ -55,6 +55,8 @@ public class SVGCameraEditor : Editor
         SVGCameraBehaviour camera = target as SVGCameraBehaviour;
         
         if (camera != null)
+        {
             this.DrawInspector(camera);
+        }
     }
 }

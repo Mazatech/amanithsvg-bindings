@@ -141,7 +141,9 @@ public class SVGBackgroundEditor : Editor
         }
         // update the background, if needed
         if (needUpdate)
+        {
             svgBackground.UpdateBackground(fullUpdate);
+        }
     }
 
     public override void OnInspectorGUI()
@@ -150,6 +152,8 @@ public class SVGBackgroundEditor : Editor
         SVGBackgroundBehaviour svgBackground = target as SVGBackgroundBehaviour;
         
         if (svgBackground != null)
+        {
             this.DrawInspector(svgBackground);
+        }
     }
 }
