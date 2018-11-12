@@ -8,8 +8,8 @@ Sprite:
   m_Name: ui_orangeButton
   m_Rect:
     serializedVersion: 2
-    x: 416
-    y: 154
+    x: 233
+    y: 29
     width: 80
     height: 30
   m_Offset: {x: 0, y: 0}
@@ -105,14 +105,14 @@ Sprite:
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 416
-      y: 154
+      x: 233
+      y: 29
       width: 80
       height: 30
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 100, y: 456, z: 100, w: 169}
+    uvTransform: {x: 100, y: 273, z: 100, w: 44}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -195,14 +195,14 @@ Sprite:
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 416
-      y: 154
+      x: 233
+      y: 29
       width: 80
       height: 30
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 100, y: 456, z: 100, w: 169}
+    uvTransform: {x: 100, y: 273, z: 100, w: 44}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []

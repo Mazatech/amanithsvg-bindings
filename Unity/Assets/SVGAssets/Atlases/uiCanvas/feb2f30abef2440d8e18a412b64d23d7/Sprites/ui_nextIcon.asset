@@ -8,8 +8,8 @@ Sprite:
   m_Name: ui_nextIcon
   m_Rect:
     serializedVersion: 2
-    x: 90
-    y: 97
+    x: 1
+    y: 158
     width: 31
     height: 32
   m_Offset: {x: 0, y: 0}
@@ -105,14 +105,14 @@ Sprite:
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 90
-      y: 97
+      x: 1
+      y: 158
       width: 31
       height: 32
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 100, y: 105.5, z: 100, w: 113}
+    uvTransform: {x: 100, y: 16.5, z: 100, w: 174}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -195,14 +195,14 @@ Sprite:
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 90
-      y: 97
+      x: 1
+      y: 158
       width: 31
       height: 32
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 100, y: 105.5, z: 100, w: 113}
+    uvTransform: {x: 100, y: 16.5, z: 100, w: 174}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []

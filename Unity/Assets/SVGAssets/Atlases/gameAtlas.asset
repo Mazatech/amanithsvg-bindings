@@ -14,7 +14,7 @@ MonoBehaviour:
   m_GUID: 698ab5f4-3fda-461e-ae65-f396cee3d6d9
   m_OutputFolder: Assets/SVGAssets/Atlases
   m_OffsetScale: 1
-  m_Pow2Textures: 1
+  m_Pow2Textures: 0
   m_MaxTexturesDimension: 2048
   m_SpritesBorder: 1
   m_ClearColor: {r: 1, g: 1, b: 1, a: 0}
@@ -432,10 +432,10 @@ MonoBehaviour:
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
   m_EditorGenerationScale: 1
-  m_SvgListHashOld: 8195ABF1B2A50CD63066F46D7EF77C27
-  m_SvgListHashCurrent: 8195ABF1B2A50CD63066F46D7EF77C27
+  m_SvgListHashOld: FC75DDD74FEC2E74DFE29E1C9802148D
+  m_SvgListHashCurrent: FC75DDD74FEC2E74DFE29E1C9802148D
   m_GeneratedSpritesLists:
-    m_KeysList: 782d0000
+    m_KeysList: 7c2d0000
     m_ValuesList:
     - Sprites:
       - TxtAsset: {fileID: 4900000, guid: 51a61b4eb74bcc44c8353b0e23f0bdf0, type: 3}

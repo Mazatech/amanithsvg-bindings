@@ -8,8 +8,8 @@ Sprite:
   m_Name: ui_settingsIcon
   m_Rect:
     serializedVersion: 2
-    x: 416
-    y: 90
+    x: 153
+    y: 61
     width: 31
     height: 31
   m_Offset: {x: 0, y: 0}
@@ -105,14 +105,14 @@ Sprite:
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 416
-      y: 90
+      x: 153
+      y: 61
       width: 31
       height: 31
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 100, y: 431.5, z: 100, w: 105.5}
+    uvTransform: {x: 100, y: 168.5, z: 100, w: 76.5}
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
@@ -195,14 +195,14 @@ Sprite:
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
-      x: 416
-      y: 90
+      x: 153
+      y: 61
       width: 31
       height: 31
     textureRectOffset: {x: 0, y: 0}
     atlasRectOffset: {x: -1, y: -1}
     settingsRaw: 0
-    uvTransform: {x: 100, y: 431.5, z: 100, w: 105.5}
+    uvTransform: {x: 100, y: 168.5, z: 100, w: 76.5}
     downscaleMultiplier: 1
   m_PhysicsShape: []
   m_Bones: []

@@ -774,7 +774,7 @@ MonoBehaviour:
   m_GUID: feb2f30abef2440d8e18a412b64d23d7
   m_OutputFolder: Assets/SVGAssets/Atlases
   m_OffsetScale: 1
-  m_Pow2Textures: 1
+  m_Pow2Textures: 0
   m_MaxTexturesDimension: 2048
   m_SpritesBorder: 1
   m_ClearColor: {r: 1, g: 1, b: 1, a: 0}
@@ -791,114 +791,128 @@ MonoBehaviour:
   m_GeneratedSpritesFiles:
     m_KeysList:
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65579
+      ElemIdx: 65558
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65583
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
       ElemIdx: 65574
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
       ElemIdx: 65576
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65571
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65580
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65572
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65573
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65569
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65566
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65565
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65577
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65570
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65578
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65541
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65563
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65567
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65564
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65581
+      ElemIdx: 65582
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
       ElemIdx: 65559
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65582
+      ElemIdx: 65579
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65561
+      ElemIdx: 65581
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
       ElemIdx: 65556
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65548
+      ElemIdx: 65580
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65583
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65562
+      ElemIdx: 65541
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
       ElemIdx: 65555
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65542
+      ElemIdx: 65548
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65539
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65544
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65558
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65545
+      ElemIdx: 65570
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
       ElemIdx: 65560
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65552
+      ElemIdx: 65557
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65543
+      ElemIdx: 65572
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65568
+      ElemIdx: 65577
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65554
-    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65575
+      ElemIdx: 65578
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
       ElemIdx: 65550
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
       ElemIdx: 65549
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65551
+      ElemIdx: 65571
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65564
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65561
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
       ElemIdx: 65553
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65547
+      ElemIdx: 65573
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65537
+      ElemIdx: 65540
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65557
+      ElemIdx: 65554
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65538
+      ElemIdx: 65563
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65542
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65539
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
       ElemIdx: 65546
     - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-      ElemIdx: 65540
+      ElemIdx: 65543
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65544
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65547
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65545
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65537
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65552
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65568
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65538
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65575
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65569
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65551
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65562
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65565
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65566
+    - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+      ElemIdx: 65567
     m_ValuesList:
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_greenCockade.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_socialExpIcon.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65579
+        ElemIdx: 65558
       SpriteData:
-        Sprite: {fileID: 21300000, guid: 066227f4bad1dfa459f556b1df301441, type: 2}
+        Sprite: {fileID: 21300000, guid: 03f4de17b35bc72478ae0b84af93c141, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 42
-        OriginalX: 104
-        OriginalY: 38
+        ZOrder: 21
+        OriginalX: 345
+        OriginalY: 464
         GenerationScale: 1
         InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 3
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_lockedLevel.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65583
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 9149f8872ed8e1542b514c7ebb988c15, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 46
+        OriginalX: 206
+        OriginalY: 626
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
     - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_infoDialog.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
@@ -927,212 +941,16 @@ MonoBehaviour:
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_powerBar.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_curLevel.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65571
+        ElemIdx: 65582
       SpriteData:
-        Sprite: {fileID: 21300000, guid: 05508bfc75a8d734ca9f93838eea2d19, type: 2}
+        Sprite: {fileID: 21300000, guid: cbf654301c7b16c4093a1ed041c2c667, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 34
-        OriginalX: 254
-        OriginalY: 348
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_blueCockade.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65580
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 70c1817e2b76a2f46bad9cce4a1dbf51, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 43
-        OriginalX: 129
-        OriginalY: 113
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_healthBar.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65572
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 3423f7a46a2fe0846b416cb0029a5886, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 35
-        OriginalX: 254
-        OriginalY: 385
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_shieldBar.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65573
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: df3f1068832faee47b1cd2769050a711, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 36
-        OriginalX: 254
-        OriginalY: 421
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_dollarsAmount.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65569
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: de5bb1ba2f7a1ce448393b0c89fa930c, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 32
-        OriginalX: 256
-        OriginalY: 235
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_diamondsAmount.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65566
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 874bf1b71e2a5e040863501e8b238164, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 29
-        OriginalX: 256
-        OriginalY: 275
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_coinsAmount.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65565
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 573fd0aae64c3f447a15d45a2a257e2f, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 28
-        OriginalX: 256
-        OriginalY: 197
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_shareButton.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65577
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 69fc05a1faf1adf478016fcc3bc7f9ae, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 40
-        OriginalX: 128
-        OriginalY: 736
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_playingButton.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65570
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: a8152b2d5431ca746801912fc6f8c7c7, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 33
-        OriginalX: 129
-        OriginalY: 252
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_coinsButton.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65578
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 623d10791b33f8841b99233f67dc1494, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 41
-        OriginalX: 234
-        OriginalY: 736
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_addIcon.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65541
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 5dc414e4154d76f4eaaa626924e73e64, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 4
-        OriginalX: 268
-        OriginalY: 462
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_blueButton.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65563
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: fa1feabad44c7694b8a06a4d9a4a771d, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 26
-        OriginalX: 124
-        OriginalY: 381
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_starsAmount.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65567
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: ac38b94d15ab3be46a717feb56adfe76, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 30
-        OriginalX: 256
-        OriginalY: 314
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_greyButton.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65564
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 9f836171a27c06344b774a2a9438079f, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 27
-        OriginalX: 119
-        OriginalY: 417
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_powerUp.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65581
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 689f35ed38170a54bb2c82422cca5d5b, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 44
-        OriginalX: 301
+        ZOrder: 45
+        OriginalX: 123
         OriginalY: 627
         GenerationScale: 1
         InCurrentInstancesGroup: 0
@@ -1151,31 +969,31 @@ MonoBehaviour:
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_curLevel.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_greenCockade.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65582
+        ElemIdx: 65579
       SpriteData:
-        Sprite: {fileID: 21300000, guid: cbf654301c7b16c4093a1ed041c2c667, type: 2}
+        Sprite: {fileID: 21300000, guid: 066227f4bad1dfa459f556b1df301441, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 45
-        OriginalX: 123
-        OriginalY: 627
+        ZOrder: 42
+        OriginalX: 104
+        OriginalY: 38
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_greenButton.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_powerUp.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65561
+        ElemIdx: 65581
       SpriteData:
-        Sprite: {fileID: 21300000, guid: 7df32a2f7eaa72d4cbaf6471a2fcc984, type: 2}
+        Sprite: {fileID: 21300000, guid: 689f35ed38170a54bb2c82422cca5d5b, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 24
-        OriginalX: 124
-        OriginalY: 308
+        ZOrder: 44
+        OriginalX: 301
+        OriginalY: 627
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
@@ -1189,6 +1007,48 @@ MonoBehaviour:
         Border: {x: 0, y: 0, z: 0, w: 0}
         ZOrder: 19
         OriginalX: 232
+        OriginalY: 567
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_blueCockade.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65580
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 70c1817e2b76a2f46bad9cce4a1dbf51, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 43
+        OriginalX: 129
+        OriginalY: 113
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_addIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65541
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 5dc414e4154d76f4eaaa626924e73e64, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 4
+        OriginalX: 268
+        OriginalY: 462
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_gplusIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65555
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: dc24d193d9ab9384ab8c3b5500de3c44, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 18
+        OriginalX: 194
         OriginalY: 567
         GenerationScale: 1
         InCurrentInstancesGroup: 0
@@ -1207,115 +1067,17 @@ MonoBehaviour:
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_lockedLevel.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_playingButton.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65583
+        ElemIdx: 65570
       SpriteData:
-        Sprite: {fileID: 21300000, guid: 9149f8872ed8e1542b514c7ebb988c15, type: 2}
+        Sprite: {fileID: 21300000, guid: a8152b2d5431ca746801912fc6f8c7c7, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 46
-        OriginalX: 206
-        OriginalY: 626
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_orangeButton.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65562
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: e40e1cf8e63547f489027e32a7d859e1, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 25
-        OriginalX: 124
-        OriginalY: 344
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_gplusIcon.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65555
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: dc24d193d9ab9384ab8c3b5500de3c44, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 18
-        OriginalX: 194
-        OriginalY: 567
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_cartIcon.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65542
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 7069af653bbeb4448ac0bc4a633ce0ea, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 5
-        OriginalX: 305
-        OriginalY: 463
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_replayIcon.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65539
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 3a69faf4030530a4d9c893f1e204011d, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 2
-        OriginalX: 194
-        OriginalY: 463
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_helpIcon.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65544
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 6bc6bee83ec8f82408298159c67abe1c, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 7
-        OriginalX: 159
-        OriginalY: 497
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_socialExpIcon.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65558
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 03f4de17b35bc72478ae0b84af93c141, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 21
-        OriginalX: 345
-        OriginalY: 464
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_infoIcon.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65545
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: e9596494649c969428176f3d50b4f5dc, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 8
-        OriginalX: 194
-        OriginalY: 497
+        ZOrder: 33
+        OriginalX: 129
+        OriginalY: 252
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
@@ -1333,73 +1095,59 @@ MonoBehaviour:
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_prevIcon.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_trophyIcon.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65552
+        ElemIdx: 65557
       SpriteData:
-        Sprite: {fileID: 21300000, guid: a45f2508c719bca4fafabc9c51bb0648, type: 2}
+        Sprite: {fileID: 21300000, guid: 12d2493b5e42e1f4fa9ef3356052c6da, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 15
-        OriginalX: 232
-        OriginalY: 533
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_settingsIcon.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65543
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 408d625973bbf0b41b1c7594c08f7e9e, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 6
-        OriginalX: 125
-        OriginalY: 497
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_cancelButton.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65568
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: cf96902211d48d04ebe7973b68feb416, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 31
-        OriginalX: 212
-        OriginalY: 421
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_fbIcon.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65554
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: a180489b9b7329842b4444f9599b9bc2, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 17
-        OriginalX: 125
+        ZOrder: 20
+        OriginalX: 269
         OriginalY: 567
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_okButton.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_healthBar.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65575
+        ElemIdx: 65572
       SpriteData:
-        Sprite: {fileID: 21300000, guid: 56a2f685a317f9746ae85383cc2d15dd, type: 2}
+        Sprite: {fileID: 21300000, guid: 3423f7a46a2fe0846b416cb0029a5886, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 38
-        OriginalX: 212
-        OriginalY: 384
+        ZOrder: 35
+        OriginalX: 254
+        OriginalY: 385
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_shareButton.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65577
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 69fc05a1faf1adf478016fcc3bc7f9ae, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 40
+        OriginalX: 128
+        OriginalY: 736
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_coinsButton.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65578
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 623d10791b33f8841b99233f67dc1494, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 41
+        OriginalX: 234
+        OriginalY: 736
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
@@ -1431,17 +1179,45 @@ MonoBehaviour:
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_rewindIcon.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_powerBar.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65551
+        ElemIdx: 65571
       SpriteData:
-        Sprite: {fileID: 21300000, guid: c8aaa437e0a84ac41af9aedc1b9dbf17, type: 2}
+        Sprite: {fileID: 21300000, guid: 05508bfc75a8d734ca9f93838eea2d19, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 14
-        OriginalX: 194
-        OriginalY: 533
+        ZOrder: 34
+        OriginalX: 254
+        OriginalY: 348
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_greyButton.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65564
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 9f836171a27c06344b774a2a9438079f, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 27
+        OriginalX: 119
+        OriginalY: 417
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_greenButton.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65561
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 7df32a2f7eaa72d4cbaf6471a2fcc984, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 24
+        OriginalX: 124
+        OriginalY: 308
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
@@ -1459,58 +1235,86 @@ MonoBehaviour:
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_volumeIcon.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_shieldBar.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65547
+        ElemIdx: 65573
       SpriteData:
-        Sprite: {fileID: 21300000, guid: 70a355c240820324596c18b5781030cd, type: 2}
+        Sprite: {fileID: 21300000, guid: df3f1068832faee47b1cd2769050a711, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 10
-        OriginalX: 269
-        OriginalY: 497
+        ZOrder: 36
+        OriginalX: 254
+        OriginalY: 421
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_playIcon.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_listIcon.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65537
+        ElemIdx: 65540
       SpriteData:
-        Sprite: {fileID: 21300000, guid: 114cb9827e214c744ae63fa8a001150a, type: 2}
+        Sprite: {fileID: 21300000, guid: 5d2d1d43ecb1af14eab0ec7cc9b8f8a7, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 0
+        ZOrder: 3
+        OriginalX: 232
+        OriginalY: 462
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_fbIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65554
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: a180489b9b7329842b4444f9599b9bc2, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 17
         OriginalX: 125
-        OriginalY: 463
-        GenerationScale: 1
-        InCurrentInstancesGroup: 0
-      InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_trophyIcon.asset
-      SpriteRef:
-        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65557
-      SpriteData:
-        Sprite: {fileID: 21300000, guid: 12d2493b5e42e1f4fa9ef3356052c6da, type: 2}
-        Pivot: {x: 0.5, y: 0.5}
-        Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 20
-        OriginalX: 269
         OriginalY: 567
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_pauseIcon.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_blueButton.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65538
+        ElemIdx: 65563
       SpriteData:
-        Sprite: {fileID: 21300000, guid: a8a7755ee75314343aa915d0cb2a8d34, type: 2}
+        Sprite: {fileID: 21300000, guid: fa1feabad44c7694b8a06a4d9a4a771d, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 1
-        OriginalX: 160
+        ZOrder: 26
+        OriginalX: 124
+        OriginalY: 381
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_cartIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65542
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 7069af653bbeb4448ac0bc4a633ce0ea, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 5
+        OriginalX: 305
+        OriginalY: 463
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_replayIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65539
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 3a69faf4030530a4d9c893f1e204011d, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 2
+        OriginalX: 194
         OriginalY: 463
         GenerationScale: 1
         InCurrentInstancesGroup: 0
@@ -1529,121 +1333,317 @@ MonoBehaviour:
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
-    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_listIcon.asset
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_settingsIcon.asset
       SpriteRef:
         TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65540
+        ElemIdx: 65543
       SpriteData:
-        Sprite: {fileID: 21300000, guid: 5d2d1d43ecb1af14eab0ec7cc9b8f8a7, type: 2}
+        Sprite: {fileID: 21300000, guid: 408d625973bbf0b41b1c7594c08f7e9e, type: 2}
         Pivot: {x: 0.5, y: 0.5}
         Border: {x: 0, y: 0, z: 0, w: 0}
-        ZOrder: 3
+        ZOrder: 6
+        OriginalX: 125
+        OriginalY: 497
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_helpIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65544
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 6bc6bee83ec8f82408298159c67abe1c, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 7
+        OriginalX: 159
+        OriginalY: 497
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_volumeIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65547
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 70a355c240820324596c18b5781030cd, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 10
+        OriginalX: 269
+        OriginalY: 497
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_infoIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65545
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: e9596494649c969428176f3d50b4f5dc, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 8
+        OriginalX: 194
+        OriginalY: 497
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_playIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65537
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 114cb9827e214c744ae63fa8a001150a, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 0
+        OriginalX: 125
+        OriginalY: 463
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_prevIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65552
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: a45f2508c719bca4fafabc9c51bb0648, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 15
         OriginalX: 232
-        OriginalY: 462
+        OriginalY: 533
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_cancelButton.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65568
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: cf96902211d48d04ebe7973b68feb416, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 31
+        OriginalX: 212
+        OriginalY: 421
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_pauseIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65538
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: a8a7755ee75314343aa915d0cb2a8d34, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 1
+        OriginalX: 160
+        OriginalY: 463
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_okButton.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65575
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 56a2f685a317f9746ae85383cc2d15dd, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 38
+        OriginalX: 212
+        OriginalY: 384
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_dollarsAmount.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65569
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: de5bb1ba2f7a1ce448393b0c89fa930c, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 32
+        OriginalX: 256
+        OriginalY: 235
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_rewindIcon.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65551
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: c8aaa437e0a84ac41af9aedc1b9dbf17, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 14
+        OriginalX: 194
+        OriginalY: 533
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_orangeButton.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65562
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: e40e1cf8e63547f489027e32a7d859e1, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 25
+        OriginalX: 124
+        OriginalY: 344
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_coinsAmount.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65565
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 573fd0aae64c3f447a15d45a2a257e2f, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 28
+        OriginalX: 256
+        OriginalY: 197
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_diamondsAmount.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65566
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: 874bf1b71e2a5e040863501e8b238164, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 29
+        OriginalX: 256
+        OriginalY: 275
+        GenerationScale: 1
+        InCurrentInstancesGroup: 0
+      InstantiatedWidgetType: 1
+    - Path: Assets/SVGAssets/Atlases/uiCanvas/feb2f30abef2440d8e18a412b64d23d7/Sprites/ui_starsAmount.asset
+      SpriteRef:
+        TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65567
+      SpriteData:
+        Sprite: {fileID: 21300000, guid: ac38b94d15ab3be46a717feb56adfe76, type: 2}
+        Pivot: {x: 0.5, y: 0.5}
+        Border: {x: 0, y: 0, z: 0, w: 0}
+        ZOrder: 30
+        OriginalX: 256
+        OriginalY: 314
         GenerationScale: 1
         InCurrentInstancesGroup: 0
       InstantiatedWidgetType: 1
   m_EditorGenerationScale: 1
-  m_SvgListHashOld: 86EE85902A75B91DB6FF6A875A39F9A8
-  m_SvgListHashCurrent: 86EE85902A75B91DB6FF6A875A39F9A8
+  m_SvgListHashOld: 41836F1FCF0017D4665B8CF2C83105A7
+  m_SvgListHashCurrent: 41836F1FCF0017D4665B8CF2C83105A7
   m_GeneratedSpritesLists:
-    m_KeysList: d02d0000
+    m_KeysList: b42d0000
     m_ValuesList:
     - Sprites:
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65579
+        ElemIdx: 65558
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65583
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
         ElemIdx: 65574
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
         ElemIdx: 65576
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65571
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65580
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65572
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65573
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65569
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65566
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65565
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65577
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65570
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65578
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65541
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65563
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65567
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65564
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65581
+        ElemIdx: 65582
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
         ElemIdx: 65559
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65582
+        ElemIdx: 65579
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65561
+        ElemIdx: 65581
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
         ElemIdx: 65556
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65548
+        ElemIdx: 65580
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65583
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65562
+        ElemIdx: 65541
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
         ElemIdx: 65555
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65542
+        ElemIdx: 65548
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65539
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65544
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65558
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65545
+        ElemIdx: 65570
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
         ElemIdx: 65560
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65552
+        ElemIdx: 65557
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65543
+        ElemIdx: 65572
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65568
+        ElemIdx: 65577
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65554
-      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65575
+        ElemIdx: 65578
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
         ElemIdx: 65550
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
         ElemIdx: 65549
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65551
+        ElemIdx: 65571
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65564
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65561
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
         ElemIdx: 65553
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65547
+        ElemIdx: 65573
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65537
+        ElemIdx: 65540
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65557
+        ElemIdx: 65554
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65538
+        ElemIdx: 65563
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65542
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65539
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
         ElemIdx: 65546
       - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
-        ElemIdx: 65540
+        ElemIdx: 65543
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65544
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65547
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65545
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65537
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65552
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65568
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65538
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65575
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65569
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65551
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65562
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65565
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65566
+      - TxtAsset: {fileID: 4900000, guid: 3636d87f9eab5f34990613bb743b4e71, type: 3}
+        ElemIdx: 65567
   m_SpritesPreviewSize: 48
   m_CanvasScaleFactor: 1
 --- !u!1 &1229485508
